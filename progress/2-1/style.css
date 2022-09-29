@@ -1,4 +1,4 @@
-@import url('https:://fonts.googleapis.com/css2?family=Lora&family=Poppin&family=Source+Sans+Pro&dislay=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins&family=Source+Sans+Pro&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -24,4 +24,5 @@ body {
 
 h1, h2, h3 {
 	font-family: Poppins, sans-serif;
+	/*font-family: serif;*/
 }
