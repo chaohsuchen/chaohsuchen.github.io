@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Example 4-1</title>
+		<meta charset="utf-8">
+		<style>
+			article {
+				background-color: orange;
+			}
+
+			/* Add the CSS setting to all <section> elements with a class label "largeFont". */
+			section.largeFont {
+				font-size: 150%;
+			}
+			/* Apply the CSS setting to the <section> ekenebt with an id label "extraLargeFont" */
+			section#extraLargeFont {
+				font-size: 200%;
+			}
+		</style>
+	</head>
+	<body>
+		<article>
+			<h1>This is the an article.</h1>
+			<!-- Add the "largeFont" class label to a group of elements -->
+			<section class = "largeFont">
+				This is the first section.
+			</section>
+			<section class = "largeFont">
+				This is the second section.
+			</section>
+			<!-- Add the "extraLargeFont" id label to identify a specific HTML element. The same id can only be used for ONE HTML element. -->
+			<section id = "extraLargeFont">
+				This is the third section.
+			</section>
+		</article>
+	</body>
+</html>

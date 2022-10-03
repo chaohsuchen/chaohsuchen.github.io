@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Example 4-4</title>
+	<style>
+		nav {
+			background-color: orange;
+		}
+
+		nav > a {
+			font-family: sans-serif;
+			text-decoration: none; /*把底線去掉*/
+			color: black;
+		}
+
+		nav > a:visited {
+			color: black;
+		}
+
+		nav > a:first-of-type {
+			font-weight: bold;
+			cursor: initial;
+		}
+
+		nav > a:not(:first-of-type):hover {
+			color: white;
+			font-weight: bold;
+		}
+
+		p > a::after {
+			content: ' [link]';
+		}
+
+		a {
+			color: darkgrey;
+			text-decoration: none;
+		}
+
+		a:visited {
+			color: blueviolet;
+		}
+
+
+	</style>
+</head>
+<body>
+	<nav>
+		<a href="/">Menu: </a>
+		<a href="/">Menu Item 1</a>
+		<a href="/">Menu Item 2</a>
+		<a href="/">Menu Item 3</a>
+		<a href="/">Menu Item 4</a>
+	</nav>
+	<article>
+		<p><a href="https://google.com">Google</a></p>
+		<p><a href="https://www.nthu.edu.tw">NTHU</a></p>
+	</article>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Example 4-2</title>
+	<style>
+		/* <h1> and <p> are adjacent sibilings. <p> is the target. */
+		h1 + p {
+			font-size: 120%;
+		}
+		/*同一階層可用*/
+		h1 ~ p {
+			font-size: 180%;
+		}
+		/*Questoin:  此 p 會引響 h1~p 嗎? 不會，範圍小的優先度高*/
+		p {
+			font-size: 110%;
+		}
+
+	</style>
+</head>
+<body>
+	<article>
+		<h1>This is the article header.</h1>
+		<!-- <div>This is a div.</div> h1 must be connected with p else it won't work-->
+		<div>This is a div.</div>
+		<p>This is the summary of an article.</p>
+		<section>
+			First section.
+			<p>Section 1 Paragraph 1</p>
+		</section>
+		<section>
+			Second section.
+			<p>Section 2 Paragraph 1</p>
+		</section>
+		<section>
+			Third section.
+			<p>Section 3 Paragraph 1</p>
+		</section>
+	</article>
+</body>
+</html>
