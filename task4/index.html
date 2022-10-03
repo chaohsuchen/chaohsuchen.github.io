@@ -40,6 +40,17 @@
 				top: 50px;
 			}
 
+			section {
+				position: absolute; 
+				top:0px; 
+				left: 0px;
+			}
+
+			p {
+				position: fixed;
+				top: 50px;
+				right: 100px;
+			}
 
 		</style>
 	</head>
@@ -47,13 +58,13 @@
 		<!-- For <article>: Width = 50% of viewport width; Height = 50% of viewport height. Move <article> to the right from its original position by 20px, and to its bottom by 50px. -->
 		<article>
 			<h1>This is an article!</h1>
-			<section style="position: absolute; top:0px; left: 0px;">
+			<section>
 				<h2>This is the first section!</h2>
 				<!-- For this <p>, make it ALWAYS appear in the same position in the viewport and stay from the top edge by 50px and from the right edge by 100px -->
-				<p style="position: fixed; top: 50px; right: 100px;">This is a paragraph.</p>
+				<p>This is a paragraph.</p>
 			</section>
 			<!-- For the second <section>, align it perfectly to the top and left edge of the parent <article> element -->
-			<section style="position: absolute; top:0px; left: 0px;">
+			<section>
 				<h2>This is the second section!</h2>
 			</section>
 		</article>
