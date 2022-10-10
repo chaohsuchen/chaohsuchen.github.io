@@ -43,9 +43,40 @@
 			nav {
 				position: fixed;
 				opacity: 0.9;
+				/* 設fixed => 參考點為body 又因為它的 margin-left 設為 10% => in order to let nav be in the center of the window=> x + 10*2 = 100 => x = 80 */
+				width: 80vw;
+
 			}
 
+			article {
+				width: 80vw;
 
+			}
+			article:nth-of-type(1) h1{
+				/*since nav has the attribute of padding 5vh => 為了讓 h1 與 nav 不重疊 => 要給他留 5 vh*/
+				padding: 5vh 0;
+			}
+
+			h1 {
+				
+				background-color: orange;
+			}
+
+			article:nth-of-type(1) section:nth-of-type(even) {
+				background-color: yellow;
+			}
+
+			article:nth-of-type(1) section:nth-of-type(odd) {
+				background-color: orange;
+			}
+
+			article:nth-of-type(2) section {
+				background-color: yellow;
+			}
+
+			article:nth-of-type(2) section:nth-of-type(4) {
+				background-color: orange;
+			}
 			/* Add your own CSS settings above */
 		</style>
 	</head>

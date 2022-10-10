@@ -8,14 +8,17 @@
 		/* <h1> and <p> are adjacent sibilings. <p> is the target. */
 		h1 + p {
 			font-size: 120%;
+			color: blue;
 		}
 		/*同一階層可用*/
 		h1 ~ p {
 			font-size: 180%;
+			color: red;
 		}
 		/*Questoin:  此 p 會引響 h1~p 嗎? 不會，範圍小的優先度高*/
 		p {
 			font-size: 110%;
+			/*color: yellow;*/
 		}
 
 	</style>
@@ -23,6 +26,7 @@
 <body>
 	<article>
 		<h1>This is the article header.</h1>
+		<!-- <p>blue</p> -->
 		<!-- <div>This is a div.</div> h1 must be connected with p else it won't work-->
 		<div>This is a div.</div>
 		<p>This is the summary of an article.</p>
