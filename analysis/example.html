@@ -17,7 +17,9 @@
 			}
 
 			span.vocab > span {
+				/*讓英文單字解釋不要一開始就顯現*/
 				display: none;
+				/*當英文單字解釋出現後，不隨著網頁滾動而消失，且不會將所有文字*/
 				position: fixed;
 				top: 50%;
 				left: 10px;
@@ -25,9 +27,13 @@
 				background-color: #dfc27d;
 				color: #000a16;
 				opacity: 0.9;
+				/*覆蓋掉原本設定的indent 5%*/
+				text-indent: 0;
 			}
 
 			span.vocab:hover > span {
+				/*when cursor is hovering on it, the program will change display from none to block*/
+				/*yet, the when it becomes block element, it will be inherit the <p> attribute -- which is indentation*/
 				display: block;
 			}
 		</style>
@@ -53,7 +59,7 @@
 				<p>
 					Waves of fire swept through the Sierra Nevada forest, churning up smoke and leaving charred vegetation behind - all under the watchful eye of a heavy-duty drone. Instruments around the perimeter snatched up samples of the singed particles spewing into the air. 
 				
-					<span class="vocab">Prescribed <span> <b>"prescribe"</b> - to make a rule of something</span></span> burns, an age-old practice that rids forests of the small trees, brush and other matter than can fuel wildfires, are getting a 21st-century upgrade. 
+					<span class="vocab">Prescribed<span><b>"prescribe"</b> - to make a rule of something</span></span> burns, an age-old practice that rids forests of the small trees, brush and other matter than can fuel wildfires, are getting a 21st-century upgrade. 
 			
 				</p>
 				<p>
