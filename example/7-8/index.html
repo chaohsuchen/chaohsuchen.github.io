@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Example 7-8</title>
+		<meta charset="utf-8">
+		<script>
+			console.log(num);	// Not OK - Reference Error
+
+			console.log(str);	// Undefined
+			var str = 'This is a string!';
+
+			/*	
+				實際運作原理:
+				// Hoisting effect
+				var str;
+				console.log(str);	// Undefined
+				str = 'This is a string!';
+			*/
+		</script>
+	</head>
+	<body>
+		<h1>JavaScript Tutorials</h1>
+	</body>
+</html>

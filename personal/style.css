@@ -60,11 +60,12 @@ h1.first-txt {
     font-family: sans-serif;
 }
 
+/*
+.DH {
+    position: relative;
+    background-image: src=('img\darkhole.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
 
-.container {
-  background-image: url('worldmap.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
-  background-size: 100% 100%;
-
-}
+}*/
