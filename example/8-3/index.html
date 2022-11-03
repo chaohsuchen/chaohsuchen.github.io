@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 8-3</title>
+	    <script>
+	    	function complexCalc(x, y) {
+	    		let result = 0;
+	    		result = x*y;//5*4
+	    		result /= (x-y);//5-4
+	    		result = result * y - x;//20*4 - 5 = 75
+	    		//return result; 
+	    		return Math.round(result,2);//since in js, / will not make the result into int automatically , so if we 								//want to show only the int part, we can use Math.round(result, 0);
+	    	}
+
+	 		function siteMsg (msg) {
+	 			let finalMsg = 'Calculation Result: ' + msg;
+	 			alert(finalMsg);
+	 		}
+
+	 		//siteMsg(complexCalc(5,4));
+
+	 		//another approach
+	 		var res = complexCalc(5,4);
+	 		//siteMsg(res);
+
+	 		res = complexCalc(-10,8);
+	 		siteMsg(res);
+	    </script>
+	</head>
+
+	<body>
+	    <h1>JavaScript Tutorials</h1>
+	</body>
+
+</html>

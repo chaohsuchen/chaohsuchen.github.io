@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 7-2</title>
+	    <script>
+	    	var profile = {
+	    		name : "victor",
+	    		height : 177,
+	    		contact: {
+	    			home: 66666,
+	    			mobile: [112,889,566],
+	    		}
+	    		};
+
+	    	console.log(profile.name);
+	    	console.log(profile['name']);
+
+	    	profile.name = "chen victor";
+	    	profile.gender = 'male';
+
+	    	console.log(profile);
+	    	console.log(profile.contact.mobile[1]);
+	    </script>
+	</head>
+
+	<body>
+	    <h1>JavaScript Tutorials</h1>
+	</body>
+
+</html>

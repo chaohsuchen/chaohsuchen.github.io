@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 8-2</title>
+	    <script>
+	    	//msg();
+	    	//hoisting effect
+	    	function msg() {
+	    		alert('This is a message.');
+	    	}
+
+	    	function flesibleMsg (str) {
+	    		let finalMsg = 'Caution: ' + str;
+	    		alert(finalMsg);
+	    	}
+
+	    	//flesibleMsg('this is a alert');
+
+	    	function complexCalc(x, y) {
+	    		let result = 0;
+	    		result = x*y;//5*4
+	    		result /= (x-y);//5-4
+	    		result = result * y - x;//20*4 - 5 = 75
+	    		alert(result);
+	    	}
+	    	complexCalc(5, 4);
+	    </script>
+	</head>
+
+	<body>
+	    <h1>JavaScript Tutorials</h1>
+	</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 8-7</title>
+	    <script>
+	    	function clacRatio(largeNum, smallNum) {
+	    		let ratio = largeNum / smallNum;
+	    		let finalMsg = "The ratio of " + largeNum + ':' + smallNum + ' is ' + ratio + ' :1.';
+	    		console.log(finalMsg);
+	    	}
+
+	    	function calcPerc(x, y, z) {
+	    		let sum = x + y + z;
+	    		let xPerc = x / sum * 100;
+	    		let yPerc = y / sum * 100;
+	    		let zPerc = z / sum * 100;
+	    		let sumMsg = 'The sum of ' + x + ', ' + y + ', ' + z + ' is: ' + sum;
+	    		console.log(sumMsg);
+	    		let xPercMsg = 'The proportion of ' + x + ' is: ' + xPerc;
+	    		let yPercMsg = 'The proportion of ' + y + ' is: ' + yPerc;
+	    		let zPercMsg = 'The proportion of ' + z + ' is: ' + zPerc;
+	    		console.log(xPercMsg);
+	    		console.log(yPercMsg);
+	    		console.log(zPercMsg);
+	    	}
+
+	    	var mathFuncs = {
+	    		clacRatio : clacRatio,
+	    		calcPerc : calcPerc
+	    	};
+	    </script>
+	</head>
+
+	<body>
+	    <h1>JavaScript Tutorials</h1>
+	</body>
+
+</html>
