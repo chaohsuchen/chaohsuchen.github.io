@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 9-3</title>
+	    <script>
+	    	var siteTitle = window.document.title;
+	    	console.log(siteTitle);
+	    	//since ducument is too often to be used, so we can directly write document.title.
+	    	var siteTitle_2 = document.title;
+	    	console.log(siteTitle_2);
+
+	    	window.onload = function() {
+	    		let allDivs = document.getElementsByTagName('div');
+	    		console.log(allDivs);
+	    		console.log(allDivs[0]);
+	    		let allAudios = document.getElementsByTagName('audio');
+	    		console.log(allAudios);
+	    	};
+	    </script>
+	</head>
+
+	<body>
+	    <h1>JavaScript Tutorials</h1>
+	    <div>Div 1</div>
+	    <div>Div 2</div>
+	    <div>Div 3</div>
+	</body>
+
+</html>

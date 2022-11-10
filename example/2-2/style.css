@@ -1,3 +1,10 @@
+/*make the text aligned to the top left corner witout any margin.*/
+/** {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}*/
+
 html{
 	background-color: hotpink;
 }

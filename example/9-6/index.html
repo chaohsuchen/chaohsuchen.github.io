@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 7-2</title>
+	    <script>
+	    	window.onload = function() {
+	    		let firstEm = document.querySelector('article > p');
+	    		firstEm.style.cssText = 'background-color: black; color: white;';
+
+	    		let secondEm = document.querySelector('section > p');
+	    		secondEm.style.cssText = 'background-color: red; color: yellow;';
+
+	    		//document.qeuerySelectorAll() = for all matches
+	    	};
+	    </script>
+	</head>
+
+	<body>
+	    <h1>JavaScript Tutorials</h1>
+	    <article>
+	    	<h2>This is an article</h2>
+	    	<p>This is a paragraph.</p>
+	    	<section>
+	    		<h3>This is a section.</h3>
+	    		<p>This is another paragraph inside a section.</p>
+	    	</section>
+	    </article>
+	</body>
+
+</html>

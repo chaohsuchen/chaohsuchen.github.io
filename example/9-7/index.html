@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 9-7</title>
+	    <script>
+	    	function popUpMsg() {
+	    		alert('Hello!');
+	    	}
+
+	    	window.onload = function () {
+	    		let button = document.getElementsByTagName('button');
+	    		button[0].addEventListener('click', popUpMsg);
+	    	};
+	    </script>
+	</head>
+
+	<body>
+	    <h1>JavaScript Tutorials</h1>
+	    <button>Pop up!</button>
+	</body>
+
+</html>
