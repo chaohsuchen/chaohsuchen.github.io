@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 10-3</title>
+	    <script>
+	    	function showHideItems () {
+	    		let menuId = this.id;
+	    		//"div#menu1 > p", "div#menu2 > p", "div#menu3 > p"
+	    		let selector = 'div#' + menuId + '>p';
+	    		console.log(selector);
+	    		let allMenuItems = document.querySelectorAll(selector);
+	    		console.log(allMenuItems);
+	    		if(allMenuItems[0].style.display === 'block') {
+	    			for(let i=0; i<allMenuItems.length; i++) {
+	    				let item = allMenuItems[i];
+	    				item.style.display = 'none';
+	    			}
+	    		}
+	    		else {
+	    			for(let i=0; i<allMenuItems.length; i++) {
+	    				let item = allMenuItems[i];
+	    				item.style.display = 'block';
+	    			}
+	    		}
+
+	    	}
+
+	    	window.onload = function () {
+	    		let allMenuDIVs = document.querySelectorAll('nav > div');
+	    		for(let i=0; i<allMenuDIVs.length; i++) {
+	    			let menu = allMenuDIVs[i];
+	    			console.log(menu);
+	    			menu.addEventListener('click', showHideItems);
+	    		}
+	    	}
+	    </script>
+	    <style>
+	    	nav {
+	    		width: 20%;
+	    		font-size: 150%;
+	    	}
+
+	    	nav > div {
+	    		background-color: red;
+	    		color: white;
+	    		text-align: center;
+	    		cursor: pointer;
+	    	}
+
+	    	nav > div > p {
+	    		display: none;
+	    		margin: 0;
+	    		background-color: blue;
+	    	}
+
+	    </style>
+	</head>
+
+	<body>
+	    <nav>
+	    	<div id="menu1">
+	    		Menu 1
+	    		<p>
+	    			Item 1
+	    		</p>
+	    		<p>
+	    			Item 2
+	    		</p>
+	    	</div>
+	    	<div id="menu2">
+	    		Menu 2
+	    		<p>
+	    			Item 1
+	    		</p>
+	    		<p>
+	    			Item 2
+	    		</p>
+	    	</div>
+	    	<div id="menu3">
+	    		Menu 3
+	    		<p>
+	    			Item 1
+	    		</p>
+	    		<p>
+	    			Item 2
+	    		</p>
+	    	</div>
+	    </nav>
+	</body>
+</html>

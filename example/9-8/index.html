@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 9-7</title>
+	    <script>
+	    	function popUpMsg() {
+	    		alert('Hello!');
+	    	}
+
+	    	function stopHey() {
+	    		let button = document.getElementsByTagName('button');
+	    		button[0].removeEventListener('click', popUpMsg);
+	    	}
+
+	    	function heyOnce() {
+	    		alert('heyOnce');
+	    		this.removeEventListener('click', heyOnce);
+	    	}
+
+	    	window.onload = function () {
+	    		let button = document.getElementsByTagName('button');
+	    		button[0].addEventListener('click', popUpMsg);
+	    		button[1].addEventListener('click', stopHey);
+	    		button[2].addEventListener('click', heyOnce);
+	    	};
+	    </script>
+	</head>
+
+	<body>
+	    <h1>JavaScript Tutorials</h1>
+	    <button>Hey!</button>
+	    <button>Stop Hey!</button>
+	    <button>Hey Once!</button>
+	</body>
+
+</html>

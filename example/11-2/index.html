@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 11-2</title>
+	    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	    <script>
+	    	window.onload = function() {
+	    		let buttons = $('button');
+	    		buttons.eq(0).on('click', hey);
+	    		buttons.eq(1).on('click', donthey);
+	    	};
+
+	    	function hey () {
+	    		alert('Hey!');
+	    	}
+
+	    	function donthey() {
+	    		let buttons = $('button');
+	    		buttons.eq(0).off('click', hey);
+	    	}
+	    </script>
+	</head>
+
+	<body>
+	    <h1>JavaScript Tutorials</h1>
+	    <button>Hey! </button>
+	    <button>Don't Hey!</button>
+	</body>
+
+</html>

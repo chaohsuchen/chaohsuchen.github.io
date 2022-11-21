@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Example 11-4</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+
+    	var newDIVStyle = {
+    		'width': '100px',
+    		'height': '100px',
+    		'background-color':'purple'
+    	};
+    	window.onload = function () {
+    		let buttons = $('button');
+    		buttons.eq(0).on('click', changeFirstDIV);
+    		buttons.eq(1).on('click', changeAllDIVs);
+    		buttons.eq(2).on('click', makeDIVsBigger);
+
+    	};
+
+    	function changeFirstDIV () {
+    		$('div').eq(0).css('background-color', 'red');
+    	}
+
+    	function changeAllDIVs () {
+    		let divs = $('div');
+
+    		for(let i=0; i<divs.length; i++) {
+					divs.eq(i).css('background-color', 'red');	
+    		}
+
+    		//this is better :
+    		//divs.css('background-color', 'red');
+    	}
+
+    	function makeDIVsBigger () {
+    		let divs = $('div');
+    		divs.css(newDIVStyle);
+    	}
+    </script>
+    <style>
+    	div {
+    		width: 50px;
+    		height: 50px;
+    		background-color: orange;
+    	}
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <button>Change First DIV </button>
+    <button>Change All DIVs </button>
+    <button>Bigger</button>
+</body>
+
+</html>

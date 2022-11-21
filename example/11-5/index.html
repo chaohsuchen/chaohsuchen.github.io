@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 11-5</title>
+	    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	    <script>
+	    	window.onload = function () {
+	    		let divs = $('div');
+	    		divs.on('click', rotateDIV);
+	    	};
+
+	    	function rotateDIV () {
+	    		$(this).addClass('clicked');
+	    	}
+	    </script>
+	    <style>
+	    	div {
+	    		width: 100px;
+	    		height: 100px;
+	    		background-color: purple;
+	    		color: white;
+	    		font-family: sans-serif;
+	    		font-weight: bold;
+	    		line-height: 100px;
+	    		text-align: center;
+	    		font-size: 50px;
+	    	}
+
+	    	div.clicked > span {
+	    		transform: rotate(45deg);
+	    	}
+
+	    	div > span {
+	    		display: inline-block;
+	    		background-color: red;
+	    	}
+	    </style>
+	</head>
+
+	<body>
+	    <div><span>+</span></div>
+
+	</body>
+
+</html>

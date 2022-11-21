@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 11-1</title>
+	    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	    <script>
+	    	window.onload = function () {
+
+	    	let lastP = document.getElementById('last');
+	    	let specialPs = document.getElementsByClassName('special');
+	    	let childPs = document.querySelectorAll('p > p');
+
+	    	// $ means jquery
+	    	// if we do not use $ to retrieve the id or elements => we can not use eq() or other jquery function later.
+	    	lastP = $('#last');
+	    	// console.log(lastP);	
+
+	    	specialPs = $('.special');
+	    	childPs = $('p > p');
+
+	    	console.log(specialPs[0].innerHTML);
+	    	console.log(specialPs.eq(0).html());
+
+	    	let arrayLength = specialPs.length;
+	    	let lastPos = arrayLength - 1;
+
+	    	console.log(specialPs[lastPos].innerHTML);
+
+	    	console.log(specialPs.eq(-1).html());
+	    	specialPs.eq(-1).html('HTML Changed!');
+
+	    	//traditional way
+
+	    	specialPs[lastPos].innerHTML = "HTML Changed!";
+
+	    	lastP.eq(0).html('Last Changed!');
+	    };
+	    </script>
+	</head>
+
+	<body>
+	    <p id="first">
+	    	First p
+	    </p>
+
+	    <p class="special">
+	    	Second P
+	    </p>
+
+	    <p class="special" id="last">
+	    	Third P
+	    	<p>
+	    		Child P
+	    	</p>
+	    </p>
+
+	</body>
+
+</html>

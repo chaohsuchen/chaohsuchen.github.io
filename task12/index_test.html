@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Task 12</title>
+		<meta charset="utf-8">
+		<script>
+			// Add your own JS codes here
+			function showHideItems() {
+				let selectedID = this.id + 'Pic';
+				console.log(selectedID);
+				let ButtomBlock = document.getElementById(selectedID);
+				console.log(ButtomBlock);	
+				var BtmBC = ButtomBlock.style.backgroundColor
+				console.log(ButtomBlock.id);
+				console.log(BtmBC);
+				if( ButtomBlock.id == selectedID)
+				{
+					ButtomBlock.style.zIndex = "999";
+					console.log('id: ');
+					console.log(selectedID);
+				}
+				else
+					ButtomBlock.style.display = 'none'
+
+			}
+			window.onload = function() {
+				let allMenuDIVs = document.querySelectorAll('nav > div');
+				for(let i=0; i<allMenuDIVs.length; i++) {
+					allMenuDIVs[i].addEventListener('click', showHideItems);
+				}
+			}
+		</script>
+		<style>
+			/* Do NOT change anything in <style> */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html {
+				width: 100%;
+				height: 100%;
+			}
+
+			body {
+				padding: 0 10%;
+			}
+
+			nav > div {
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				margin: 10px;
+				cursor: pointer;
+			}
+
+			figure > div {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 500px;
+			}
+
+			div.yellow {
+				background-color: yellow;
+			}
+
+			div.red {
+				background-color: red;
+			}
+
+			div.blue {
+				background-color: blue;
+			}
+
+			div.orange {
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Do NOT change anything in <body> -->
+		<nav>
+			<div class="yellow" id="yellow"></div>
+			<div class="red" id="red"></div>
+			<div class="blue" id="blue"></div>
+			<div class="orange" id="orange"></div>
+		</nav>
+		<figure style="position: relative;">
+			<div class="yellow" id="yellowPic"></div>
+			<div class="red" id="redPic"></div>
+			<div class="blue" id="bluePic"></div>
+			<div class="orange" id="orangePic"></div>
+		</figure>
+	</body>
+</html>

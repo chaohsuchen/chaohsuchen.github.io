@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 11-3</title>
+	    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	    <script>
+	    	window.onload = function() {
+	    		let buttons = $('button');
+	    		buttons.on('click', heyOnce);
+	    	};
+
+	    	function heyOnce() {
+	    		alert('Hey!');
+	    		$(this).off('click', heyOnce);
+	    	}
+
+
+	    </script>
+	</head>
+
+	<body>
+	    <h1>JavaScript Tutorials</h1>
+	    <button>Hey Once! </button>
+	</body>
+
+</html>

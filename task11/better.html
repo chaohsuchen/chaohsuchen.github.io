@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Task 11</title>
+		<meta charset="utf-8">
+		<style>
+			/* Do not change anything in the CSS settings */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				text-align: center;
+			}
+
+			div {
+				display: inline-block;
+				color: white;
+				width: 180px;
+				height: 180px;
+				margin: 20px;
+				font-size: 150%;
+				font-family: sans-serif;
+				line-height: 180px;
+				vertical-align: top;
+			}
+		</style>
+		<script>
+			// Add your script to this <script> block
+
+			// A variable for temporarily storing the original background color.
+			// It's initial value is an "empty string" with just a pair of quotation marks.
+			var oldBg = '';
+
+			// A function that changes the background color to a black one.
+			function changeBg () {
+				/* Since this function is bounded to the "mouseenter" event occuring with both <div>s 
+				   below, "this" corresponds to either <div> element, depending on which <div> the 
+				   mouse enters and triggers this function.
+				*/
+
+				// Get the current/original background color of the target <div> element
+				oldBg = this.style.backgroundColor;
+				// Change the background color of the target <div> element to "black"
+				this.style.backgroundColor = 'black';
+				// Change the HTML contained in the target <div> element into "Hi!"
+				this.innerHTML = 'Hi!';
+			}
+
+			// A function that restores the original background color.
+			function restoreBg () {
+				/* Since this function is bounded to the "mouseleave" event occuring with both <div>s 
+				   below, "this" corresponds to either <div> element, depending on which <div> the 
+				   mouse leaves and triggers this function.
+				*/
+
+				// Restore the original background color stored temporarily in the changeBg function
+				// above.
+				this.style.backgroundColor = oldBg;
+				// Change the inner HTML of the target <div> element back to nothing with an 
+				// empty string.
+				this.innerHTML = '';
+			}
+
+			// Add event listeners after the HTML document is fully loaded.
+			window.onload = function () {
+				// Get the first <div> by its ID
+				let div = document.getElementById('div1');
+				// Bind the first <div> to the mouseenter/mouseleave events and the corresponding functions.
+				div.addEventListener('mouseenter', changeBg);
+				div.addEventListener('mouseleave', restoreBg);
+				// Get the second <div> by its ID and store it into the existing variable
+				// (and replace the original content of the variable)
+				div = document.getElementById('div2');
+				// Bind the second <div> to the mouseenter/mouseleave events and the corresponding functions.
+				div.addEventListener('mouseenter', changeBg);
+				div.addEventListener('mouseleave', restoreBg);
+			};
+		</script>
+	</head>
+	<body>
+		<!-- Do not change anything in <body> -->
+		<div id="div1" style="background-color: red;"></div>
+		<div id="div2" style="background-color: green;"></div>
+	</body>
+</html>

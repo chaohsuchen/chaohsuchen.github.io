@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+<script type="text/javascript" src="/TSPD/081ccac3adab20004a886510de09f388a3602d3e17160f2c7dc4665e2dcaccd6839a89c187a61367?type=9"></script>
+
+		<title>Task 11</title>
+		<meta charset="utf-8">
+		<style>
+			/* Do not change anything in the CSS settings */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				text-align: center;
+			}
+
+			div {
+				display: inline-block;
+				color: white;
+				width: 180px;
+				height: 180px;
+				margin: 20px;
+				font-size: 150%;
+				font-family: sans-serif;
+				line-height: 180px;
+				vertical-align: top;
+			}
+		</style>
+		<script>
+			// Add your script to this <script> block
+
+			function div1_anime() {
+				this.style.backgroundColor = 'black';
+				this.innerHTML = this.innerHTML + 'Hi!';
+				this.style.color = 'white';
+			};
+
+			function div2_anime() {
+				this.style.backgroundColor = 'black';
+				this.innerHTML = this.innerHTML + 'Hi!';
+				this.style.color = "white";
+			};
+
+			function rst_div1() {
+				this.style.backgroundColor = 'red';
+				this.innerHTML = "";
+			};
+
+			function rst_div2() {
+				this.style.backgroundColor = 'green';
+				this.innerHTML = "";
+			};
+
+
+			window.onload = function() {
+				let div_1 = document.getElementById('div1');
+				let div_2 = document.getElementById('div2');
+
+				console.log(div_1);
+
+				div_1.addEventListener('mouseenter', div1_anime);
+				div_1.addEventListener('mouseleave', rst_div1);
+
+				div_2.addEventListener('mouseenter', div2_anime);
+				div_2.addEventListener('mouseleave', rst_div2);
+			};
+	
+
+		</script>
+	</head>
+	<body>
+		<!-- Do not change anything in <body> -->
+		<div id="div1" style="background-color: red;"></div>
+		<div id="div2" style="background-color: green;"></div>
+	</body>
+</html>

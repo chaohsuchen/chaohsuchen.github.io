@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Example 10-2</title>
+		<meta charset="utf-8">
+		<script>
+			// Introduction to "conditional expressions" with different types of variables.
+			// The output of "conditional expressions" is either "true" or "false"
+			var num1 = 5, num2 = 10, str = '5', undefinedVar = undefined;
+			// 5 is not higher than (>) 10, so "false"
+			console.log(num1 > num2);
+			// 10 is higher than or equal to (>=) 5, so "true"
+			console.log(num2 >= num1);
+			// The numeric value 5 is EQUAL TO (==) the string "5", 
+			// if data type is NOT taken into account, so "true"
+			console.log(num1 == str);
+			// The numeric value 5 is NOT EQUAL TO the string "5",
+			// if data type IS taken into account (===), so "true".
+			// It is recommended to use === to run a "conservative" test the equivalence of two data values.
+			console.log(num1 === str);
+			// "!" means "not", and since the numeric 5 is NOT EQUAL TO 
+			// the string "5", so "true" .
+			console.log(num1 !== str);
+			// When ! is placed before a variable, it is a test of whether the variable
+			// does NOT have anything (e.g., null or undefined). Since "undefinedVar" is undefined,
+			// the output is "true".
+			console.log(!undefinedVar);
+			// "num1" has a numeric value, so it DOES have something,
+			// and the output is "false".
+			console.log(!num1);
+
+			/* Get the string put into the <input> field, and show only the <div> elements
+			   with a class name that matches the string.
+			*/
+			function filterDIV () {
+				// Get the <input> element using getElementsByTagName, and the result is stored
+				// in an array.
+				let input = document.getElementsByTagName('input');
+				// There is only one <input> element, so get the first and the only <input>
+				// from the array, and from the "value" key, we can obtain the string put into
+				// the element.
+				let className = input[0].value;
+				/* Use the string as the class name, and search for all the elements from the 
+				   HTML document that have the class name using getElementsByClassName.
+				   The returned result is an array including all matches. */
+				let matches = document.getElementsByClassName(className);
+				// If there's no match, the returned array will be empty, which means
+				// it will have a length of 0.
+				if(matches.length === 0) {
+					// When this condition is satisfied, pop up a message.
+					alert('No match!');
+				}
+				// If the length of the array is NOT 0, run this "else" block.
+				else {
+					// Get all <div> elements
+					let allDIVs = document.getElementsByTagName('div');
+					// Use a "for loop" to iterate through all <div> elements
+					// and hide them first
+					for(let i=0; i<allDIVs.length ; i++) {
+						let div = allDIVs[i];
+						div.style.display = 'none';
+					}
+					// Use another "for loop" to iterature through only the matched 
+					// <div> elements, and set their "display" property to be "inline-block"
+					// the matches will appear.
+					for(let i=0; i<matches.length; i++) {
+						let div = matches[i];
+						div.style.display = 'inline-block';
+					}
+				}
+			}
+
+			// Just make every <div> element appear again if some of them
+			// are already "filtered out".
+			function resetFilter () {
+				let allDIVs = document.getElementsByTagName('div');
+				for(let i=0; i<allDIVs.length; i++) {
+					let div = allDIVs[i];
+					div.style.display = 'inline-block';
+				}
+			}
+
+			// Bind the two buttons to the two respective functions after
+			// the HTML document is fully loaded.
+			window.onload = function () {
+				let buttons = document.getElementsByTagName('button');
+				buttons[0].addEventListener('click', filterDIV);
+				buttons[1].addEventListener('click', resetFilter);
+			};
+		</script>
+		<style>
+			div {
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+			}
+
+			div.red {
+				background-color: red;
+			}
+
+			div.blue {
+				background-color: blue;
+			}
+
+			div.yellow {
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="red"></div>
+		<div class="blue"></div>
+		<div class="red"></div>
+		<div class="yellow"></div>
+		<div class="yellow"></div>
+		<div class="red"></div>
+		<p>
+			<button>Filter</button>
+			<button>Reset</button>
+			<!-- And input field for entering texts -->
+			<input type="text" placeholder="Enter a class name" />
+		</p>
+	</body>
+</html>

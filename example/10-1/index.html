@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 10-1</title>
+	    <script>
+	    	for(let i=0; i<5; i++) {
+	    		console.log(i);
+	    	}
+
+	    	function showMenuItems (event) {
+	    		event.stopPropagation();
+	    		let menuItems = document.querySelectorAll('div:not(:first-of-type)');
+	    		// console.log(menuItems);
+	    		for(let i=0; i<menuItems.length; i++) {
+	    			// console.log(menuItems[i]);
+	    			let item = menuItems[i];
+	    			item.style.display = 'inline-block';
+	    		}
+	    	}
+
+	    	function hideMenuItems () {
+	    		let menuItems = document.querySelectorAll('div:not(:first-of-type)');
+	    		
+	    		for(let i=0; i<menuItems.length; i++) {
+	    			let item = menuItems[i];
+	    			item.style.display = 'none';
+	    		}
+	    	}
+
+	    	window.onload = function () {
+	    		let divs = document.getElementsByTagName('div');
+	    		divs[0].addEventListener('click', showMenuItems);
+	    		document.addEventListener('click', hideMenuItems);
+	    	};
+	    </script>
+	    <style>
+	    	div {
+	    		padding: 0;
+	    		display: inline-block;
+	    		width: 100px;
+	    		height: 100px;
+	    		line-height: 100px;
+	    		color: white;
+	    		text-align: center;
+	    	}
+
+	    	div:first-of-type {
+	    		background-color: red;
+	    		cursor: pointer;
+	    	}
+
+	    	div:not(:first-of-type) {
+	    		display: none;
+	    		background-color: blue;
+	    	}
+	    </style>	
+	</head>
+
+	<body>
+	    <h1>JavaScript Tutorials</h1>
+	    <div>Menu</div>
+	    <div>Item 1</div>
+	    <div>Item 2</div>
+	    <div>Item 3</div>
+	    <div>Item 4</div>
+	    <div>Item 5</div>
+	</body>
+
+</html>
