@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Task 13</title>
+		<meta charset="utf-8">
+		<!-- Don't forget to import jQuery -->
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+		<script>
+			// A function created to show every <div> element except the first one.
+			function showMenuItems (event) {
+				// Every function triggered by an event receives an object including all the 
+				// information and functions associated with the event.
+				/* stopPropagation() is necessary here, so clicking on the first <div> element
+				   does not spread to its parent nodes, such as the entire "document" to cause further problem.
+				*/
+				event.stopPropagation();
+				// Get all <div> elements except the first one, which are stored in an array
+				let menuItems = $('div:not(:first-of-type)');
+				// Use a "for loop" to iterate through the <div> array...
+				menuItems.css('display', 'inline-block');
+			}
+
+			// A function created to hide every <div> element except the first one.
+			function hideMenuItems () {
+				let menuItems = $('div:not(:first-of-type)');
+				menuItems.css('display', 'none');
+			}
+
+			// An addition function that changes the background color for a clicked menu item.
+			function changeMenuItemBg (event) {
+				// We also need to stop the event of clicking on a menu item from propagating,
+				// because clicking on a menu item is equivalent to clicking on the entire 
+				// HTML document, which would trigger "hideMenuItems".
+				event.stopPropagation();
+				// "this" corresponds to the clicked menu item that triggers this function.
+				$(this).css('background-color', 'orange');
+			}
+
+			// Bind both buttons to the respective function after the HTML document
+			// is fully loaded.
+			window.onload = function () {
+				let divs = $('div');
+				// Click on the first <div> to show all menu items
+				divs.eq(0).on('click', showMenuItems);
+				/* Click on everywhere in the entire HTML document to hide all menu items.
+				   Embed the entire "document" in "$()", so the document is "transformed"
+				   into a jQuery object. Only in this way, you can use the jQuery function "on()".
+				*/ 
+				$(document).on('click', hideMenuItems);
+				// Bind every menu item to the "changeMenuItemBg" function
+				let menuItems = $('div:not(:first-of-type)');
+				menuItems.on('click', changeMenuItemBg);
+			};
+		</script>
+		<style>
+			div {
+				padding: 0;
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				line-height: 100px;
+				color: white;
+				text-align: center;
+			}
+
+			div:first-of-type {
+				background-color: red;
+				cursor: pointer;
+			}
+
+			div:not(:first-of-type) {
+				/* Hide all non-first <div> elements by default */
+				display: none;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div>Menu</div>
+		<div>Item 1</div>
+		<div>Item 2</div>
+		<div>Item 3</div>
+		<div>Item 4</div>
+		<div>Item 5</div>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 10-1</title>
+	    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	    <script>
+	    	function showMenuItems (event) {
+	    		event.stopPropagation();
+	    		let menuItems = $('div:not(:first-of-type)');
+
+	    		for(let i=0; i<menuItems.length; i++) {
+	    			let item = menuItems[i];
+	    			item.style.display = 'inline-block';
+	    		}
+	    	}
+
+
+	    	function changeBC () {
+	    		$(this).css('background-color', 'yellow');
+	    	}
+
+	    	window.onload = function () {
+	    		let divs = $('div');
+	    		divs.eq(0).on('click', showMenuItems);
+	    		for(let i=1; i<divs.length; i++) {
+	    			divs.eq(i).on('click', changeBC);
+	    		}
+	    	
+	    	};
+	    </script>
+	    <style>
+	    	div {
+	    		padding: 0;
+	    		display: inline-block;
+	    		width: 100px;
+	    		height: 100px;
+	    		line-height: 100px;
+	    		color: white;
+	    		text-align: center;
+	    	}
+
+	    	div:first-of-type {
+	    		background-color: red;
+	    		cursor: pointer;
+	    	}
+
+	    	div:not(:first-of-type) {
+	    		display: none;
+	    		background-color: blue;
+	    	}
+	    </style>	
+	</head>
+
+	<body>
+	    <h1>JavaScript Tutorials</h1>
+	    <div>Menu</div>
+	    <div>Item 1</div>
+	    <div>Item 2</div>
+	    <div>Item 3</div>
+	    <div>Item 4</div>
+	    <div>Item 5</div>
+	</body>
+
+</html>
