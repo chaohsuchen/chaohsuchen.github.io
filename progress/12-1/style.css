@@ -63,7 +63,8 @@ nav > a {
 	/*超連結原本會預設有下底線*/
 	text-decoration: none;
 	opacity: 0.6;
-	cursor: pointer;
+	/*	when the cursor hover, the hand will show up.*/
+	cursor:pointer;
 }
 
 nav > a:visited {

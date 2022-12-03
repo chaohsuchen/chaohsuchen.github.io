@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 12-1</title>
+	    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	    <script>
+	    	function changeTexts () {
+	    		$(this).html('Changed!');
+	    	}
+
+	    	window.onload = function () {
+	    		//$('div').on('click', changeTexts);
+	    		// $('div').click(changeTexts);
+	    		// if it is in phones's browser => we need to use touchend to indicate. So using on has more flexibility.
+	    		// the following means when it is clicked and touchend, it will trigger the changeTexts function
+	    		$('div').on('click touchend', changeTexts);
+	    	};
+	    </script>
+	    <style>
+	    	div {
+	    		width: 100px;
+	    		height: 100px;
+	    		background-color: red;
+	    		color: white;
+	    		text-align: center;
+	    		line-height: 100px;
+	    	}
+	    </style>
+	</head>
+
+	<body>
+	    <div></div>
+	</body>
+
+</html>

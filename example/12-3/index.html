@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 12-3</title>
+	    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	    <script>
+	    	function checkRestoreDIVPos () {
+	    		let divs = $('div');
+	    		let vh = $(window).height();
+	    		let scrollTop = $(window).scrollTop();
+	    		divs.each(function (index) {
+	    			let div = divs.eq(index);
+	    			let divTop = div.offset().top;
+	    			if(vh + scrollTop -50 > divTop) {
+	    				div.css('top', 0);
+	    			}
+	    		});
+	    	}
+	    	window.onload = function () {
+	    		console.log($(window).height());
+	    		console.log($(window).scrollTop());
+	    		let divs = $('div');
+	    		console.log(divs.eq(0).offset().top);
+	    		console.log(divs.eq(-1).offset().top);
+	    		checkRestoreDIVPos();
+	    		$(document).on('scroll', checkRestoreDIVPos);
+	    	};
+	    </script>
+	    <style>
+	    	div {
+	    		position: relative;
+	    		top: 50px;
+	    		width: 200px;
+	    		height: 200px;
+	    		margin: 10px;
+	    		background-color: red;
+	    	}
+	    </style>
+	</head>
+
+	<body>
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	</body>
+
+</html>

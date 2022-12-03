@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 12-2</title>
+	    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	    <script>
+	    	function showMenuItems (event) {
+	    		event.stopPropagation();
+	    		//$('div:not(:first-of-type').css('display', 'inline-block');
+	    		let menuItems = $('div:not(:first-of-type)');
+	    		menuItems.each(
+	    			function (index) {
+	    				let item = menuItems.eq(index);
+	    				setTimeout(function() {
+							item.css('display', 'inline-block');
+	    				}, index * 100);//unit ms => 1000ms = 1s
+	    			}
+	    			);
+	    	}
+
+	    	function hideMenuItems () {
+	    		let menuItems = $('div:not(:first-of-type)');
+	    		menuItems.each(
+	    			function (index) {
+	    				let item = menuItems.eq(index);
+	    				setTimeout(function() {
+	    					item.css('display', 'none');
+	    				}, index * 100)
+	    			})
+	    	}
+
+	    	window.onload = function () {
+	    		$('div:first-of-type').on('click', showMenuItems);
+	    		$(document).on('click', hideMenuItems);
+	    	};
+	    </script>
+	    <style>
+	    	div {
+	    		padding: 0;
+	    		display: inline-block;
+	    		width: 100px;
+	    		height: 100px;
+	    		line-height: 100px;
+	    		color: white;
+	    		text-align: center;
+	    	}
+
+	    	div:first-of-type {
+	    		background-color: red;
+	    		cursor: pointer;
+	    	}
+
+	    	div:not(:first-of-type) {
+	    		display: none;
+	    		background-color: blue;
+	    	}
+	    </style>
+	</head>
+
+	<body>
+	    <div>Menu</div>
+	    <div>Item 1</div>
+	    <div>Item 2</div>
+	    <div>Item 3</div>
+	    <div>Item 4</div>
+	    <div>Item 5</div>
+	</body>
+
+</html>
