@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 13-1</title>
+	    <script>
+	    	
+	    </script>
+	    <style>
+	    	* {
+	    		margin: 0;
+	    		padding: 0;
+	    		box-sizing: border-box;
+	    	}
+
+	    	html {
+	    		height: 100%;
+	    		width: 100%;
+	    	}
+
+	    	body {
+	    		min-height: 100%;
+	    		width: 100%;
+	    		padding: 0 10vw;
+	    		overflow-x: hidden;
+	    	}
+
+	    	body > div {
+	    		display: inline-block;
+	    		width: 33.33333%;
+	    		height: 10vh;
+	    		font-size: 120%;
+	    		font-family: sans-serif;
+		    	color: white;
+		    	opacity: 0.7;
+				/*transition: height 0.3s linear, opacity 0.5s linear;*/
+				transition: all 0.3s linear;
+	    	}
+
+	    	body > div:hover {
+	    		height: 100vh;
+	    		opacity: 1;
+				/*transition: height 1s linear, opacity 2s linear;*/
+				transition: all 1s ease-out;
+	    	}
+	    </style>
+	</head>
+
+	<body>
+	    <div style="background-color: red;">Home</div><div style="background-color: purple;">My Bio</div><div style="background-color: blue;">Projects</div>
+	</body>
+
+</html>

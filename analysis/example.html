@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="demo.js"></script>
     <script>
-    $(window).on("load", delaySection());
+    // $(window).on("load", delaySection());
     $(document).ready(()=>{
 				$(document).on('scroll', delaySection);
 			});
@@ -20,7 +20,7 @@
             let sec = sections.eq(index);
             let secTop = sec.offset().top;
             if (vh + scrollTop - 50 > secTop) {
-            	console.log('hello');
+            	// console.log('hello');
                 sec.css('top', 0);
             }
         });
