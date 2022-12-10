@@ -1,0 +1,87 @@
+
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Task 14: The Big Three</title>
+		<meta charset="utf-8">
+		<style>
+			/* Two fonts used in the demo: Ms Madi, Oswald */
+			@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&family=Oswald&display=swap');
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html {
+				height: 100%;
+				width: 100%;
+			}
+
+			body {
+				min-height: 100%;
+				width: 100%;
+			}
+
+			/* Do not change the above CSS settings */
+
+			/* Add your own CSS settings below: Note that you can add
+			   new CSS settings to the same element such as <body>, but do not
+			   overwrite the settings above.
+			 */
+			body {
+				overflow-x: hidden;
+				overflow-y: hidden;
+			}
+			figure {
+				margin:  0 10vw;
+				padding: 0 0;
+				left: 10vw;
+			}
+
+			figcaption {
+				position: relative;
+				top: -50%;
+				color: white;
+			}
+
+			.ND {
+				height: 33.3333vh;
+				width: 80vw;
+				object-fit: cover;
+				object-position: 100% 0;
+			}
+
+			.FD {
+				height: 33.3333vh;
+				width: 80vw;
+				object-fit: cover;
+				object-position: 100% 0;
+			}
+
+			.DC {
+				height: 33.3333vh;
+				width: 80vw;
+				object-fit: cover;
+				object-position: 100% 0;
+			}
+			/* Add your own CSS settings above */
+		</style>
+	</head>
+	<body>
+		<!-- Do not use inline styles in HTML tags -->
+		<figure>
+			<figcaption>Nadal</figcaption>
+			<img class="ND" src="img/Nadal.jpg">
+		</figure>
+		<figure>
+			<figcaption>Federer</figcaption>
+			<img class="FD" src="img/Federer.jpg">
+		</figure>
+		<figure>
+			<figcaption>Djokovic</figcaption>
+			<img class="DC" src="img/Djokovic.jpg">
+		</figure>
+	</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <title>Expository Essay Analysis: Example</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="demo.js"></script>
+    <script>
+    // $(window).on("load", delaySection());
+    $(document).ready(()=>{
+				$(document).on('scroll', delaySection);
+			});
+    function delaySection() {
+        let sections = $('article > section');
+        let vh = $(window).height();
+        let scrollTop = $(window).scrollTop();
+        sections.each(function(index) {
+            let sec = sections.eq(index);
+            let secTop = sec.offset().top;
+            if (vh + scrollTop - 50 > secTop) {
+            	// console.log('hello');
+                sec.css('top', 0);
+            }
+        });
+    }
+    </script>
+    <style>
+    span.joint {
+        color: #a6611a;
+    }
+
+    span.vocab {
+        padding: 0 4px;
+        border-radius: 5px;
+        background-color: #018571;
+        color: white;
+    }
+
+    span.vocab>span {
+        /*讓英文單字解釋不要一開始就顯現*/
+        display: none;
+        /*當英文單字解釋出現後，不隨著網頁滾動而消失，且不會將所有文字*/
+        position: fixed;
+        top: 50%;
+        left: 10px;
+        border-radius: 3px;
+        background-color: #dfc27d;
+        color: #000a16;
+        opacity: 0.9;
+        /*覆蓋掉原本設定的indent 5%*/
+        text-indent: 0;
+    }
+
+    span.vocab:hover>span {
+        /*when cursor is hovering on it, the program will change display from none to block*/
+        /*yet, the when it becomes block element, it will be inherit the <p> attribute -- which is indentation*/
+        display: block;
+    }
+
+    article > section {
+        position: relative;
+        top: 50px;
+    }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a><span style="display: inline-block;">+</span></a><a href="index.html">Home</a><a href="example.html">Essay Example</a><a href="analysis.html">Structural Analysis</a>
+    </nav>
+    <article>
+        <h1>How to Save a Forest by Burning It</h1>
+        <p>Sept. 7, 2022 @ The New York Times [<a href="https://www.nytimes.com/2022/09/07/climate/california-wildfire-prescribed-burn.html" target="_blank">Original Article</a>]<br>
+            By Raymond Zhong
+        </p>
+        <figure style="text-align: center;">
+            <img src="img\NYTimes - Forest Fire.jpg" width="500" height="300">
+        </figure>
+        <section id="sec1">
+            <h3>[Sec. #1]</h3>
+            <p>
+                Waves of fire swept through the Sierra Nevada forest, churning up smoke and leaving charred vegetation behind - all under the watchful eye of a heavy-duty drone. Instruments around the perimeter snatched up samples of the singed particles spewing into the air.
+                <span class="vocab">Prescribed<span><b>"prescribe"</b> - to make a rule of something</span></span> burns, an age-old practice that rids forests of the small trees, brush and other matter than can fuel wildfires, are getting a 21st-century upgrade.
+            </p>
+            <p>
+                With climate change parching the land and increasing wildfire hazards, scientists are beginning to use cutting-edge technology and computer modeling to make controlled, low-intensity burns safer, more effective and less disruptive to nearby communities.
+                "Fire has made us civilized, but we still don't understand it fully;' said Tirtha Banerjee of the University of California, Irvine, as he watched a tall heap of dead tree limbs go up in flames.
+                As useful as prescribed burns can be for maintaining forests, they are tough to carry out一costly, labor-intensive, contingent on narrowing windows of favorable weather. And even well-planned burns can turn disastrous, as when a fire started by the United States Forest Service this spring was transformed by gusting winds into New Mexico's largest wildfire on record.
+            </p>
+        </section>
+        <section id="sec2">
+            <h3>[Sec. #2]</h3>
+            <p>
+                Scientists think we can do better. Several teams recently converged at Blodgett Forest Research Station northeast of Sacramento, an area thick with towering Ponderosa pine, Douglas fir and <span class="vocab">incense<span><b>"incense"</b> - a substance that is burnt to produce a sweet smell, especially as part of a religious</span></span> cedar. A planned burn at Blodgett was a precious opportunity to collect data in the field, and the researchers packed carloads of gear including GoPro cameras, drone-mounted sensors for mapping the terrain in minute detail, a sonic anemometer for measuring wind and an assortment of machines that collected airborne particles.
+                <span class="joint">►</span>While researchers have long deployed advanced techniques to examine wildfire behavior, fewer have looked at questions specific to prescribed fires, like whether debris should be cleared away with chain saws and bulldozers in advance, said Robert York, a forest ecologist with the University of California, Berkeley.
+            </p>
+        </section>
+        <section id="sec3">
+            <h3>[Sec. #3]</h3>
+            <p>
+                Thinning pre-emptively could allow more wind to whip through during a burn, producing hotter flames and making the blaze harder to control. But it might also help the burn consume more of the remaining <span class="vocab">fodder<span><b>"fodder"</b> - food that is given to cows, horses, and other farm animals</span></span>, creating a longer-lasting buffer against wildfire.
+                <span class="joint">►</span>"For prescribed fire, I think it's really all out there to be explored," Dr. Banerjee said.
+                When Prometheus stole fire from the gods and gave it to humans, he probably didn't imagine how tricky it would be to wield on a planet heated by the burning of fossil fuels.
+                Global warming has brought more of the extremely hot and dry conditions that can tum wildfires into deadly catastrophes. Blazes as ferocious as last year's Dixie Fire, which burned through nearly a million acres of Northern California, weren't part of the picture for scientists half a century ago, when the Forest Service and other agencies first developed their mathematical models for predicting how wildfires spread.
+                Scientists have been "just completely caught off guard about how fast things are changing:' said James T. Randerson, an earth scientist at the University of California, Irvine.
+                Crews across California this week were battling a spate of new fires amid a heat wave that has shattered temperature records in Sacramento and other cities.
+            </p>
+        </section>
+        <section id="sec4">
+            <h3>[Sec. #4</h3>
+            <p>
+                The Forest Service has acknowledged that its methods are failing to keep up as the planet warms. The agency's investigation into this spring's <span class="vocab">ill-fated<span><b>"ill-fated"</b> - unlucky and unsuccessful, often resulting in death</span></span> burn in New Mexico found that, even though it had been properly planned, the resulting fire proved more dangerous and fast moving than anticipated.
+                To help teach land managers how to burn in increasingly volatile landscapes, J. Kevin Hiers, a fire scientist with the United States Geological Survey and Tall Timbers Research Station in Tallahassee, Fla., has spent years working with other researchers on the fire equivalent of a flight simulator - a video game-like training system that would be "a Minecraft-type experience for burn bosses:' as Mr. Hiers calls it.
+            </p>
+            <p>
+                Better fire modeling is important, but so is fodder balancing that knowledge into easy-to-use tools for burn crews, he said. "We should be able to represent, in a training environment, what fire should or might do in a very sophisticated way, long before we strike a match."
+                <span class="joint">►</span>For the scientists who had traveled to Blodgett Forest, their first two days at the site were spent setting up equipment and carefully surveying the landscape before it was engulfed in flames一something that would be impossible had they been trying to study a wildfire.
+                Dr. Banerjee and his team of graduate students and postdoctoral researchers flew their drone repeatedly over the area, mapping it with lidar, a technology for capturing detailed three-dimensional images; a thermal camera; and a multi-spectral camera, which told them how dry the brush was. By comparing images from before, during and after the burn, Dr. Banerjee's team could pinpoint exactly how the fire had transformed the forest floor.
+            </p>
+        </section>
+        <section id="sec5">
+            <h3>[Sec. #5]</h3>
+            <p>
+                In the evenings, Dr. Banerjee's team burned small piles of dead wood and shot GoPro videos of the flickering flames and the embers being <span class="vocab">lofted<span><b>"loft"</b> - to hit a object high</span></span> into the air. The footage would help the team study how embers travel, which might reveal how fires spread out of control.
+                <span class="joint">►</span>In another patch of forest, Dr. Randerson and Audrey Odwuor, a Ph.D. candidate at Irvine, placed twigs and pine needles into Ziploc bags, as if collecting evidence from a crime scene. They planned to burn the material back at their lab to analyze the chemical composition of the resulting emissions. They had also brought instruments to Blodgett to collect smoke samples. Someday, Ms. Odwuor said, such methods could help evaluate how effectively a prescribed fire had burned through the fuels it was supposed to get rid of.
+                Dr. York, who works for much of the year at Blodgett, guided the researchers around an area of the forest that he said hadn't burned in three years. Burning now would help keep the plot in a healthy, natural state, even if all the planning, coordination and effort going into it was anything but natural.
+            </p>
+        </section>
+        <section id="sec6">
+            <h3>[Sec. #6]</h3>
+            <p>
+                The morning of the burn was sunny and hot. The researchers put on flame-resistant shirts and hard hats, and Dr. York, as the burn boss, led the group to an area of high ground. He lowered his drip torch, and a thin stream of fuel dribbled out and caught the flame on the torch's wick. A wisp of fire sprouted from the dead brown ground. The bum had begun.
+                Dr. York and a small experienced crew walked perpendicular to the slope of the forest, using their torches to draw lines of flame that burned uphill. The landscape was quickly transformed. The tall trees cast gauzy, dramatic shadows across the curtains of whitish­gray smoke. Dense haze scattered the sunlight, bathing the forest in a deep orange glow. The <span class="vocab">crackling<span><b>"crackling"</b> - short, dry, sharp sounds made by something</span></span> of burning bushes mingled with the low mechanical whine from the drone above.
+            </p>
+            <p>
+                For a while, the flames had a meek, almost dainty quality; the vegetation was too damp to bum very fiercely. But as the day warmed, fires began blackening the hillsides at a rapid clip. The scientists took in the scene cautiously as their machines gathered data.
+                <span class="joint">►</span>By late afternoon, Dr. York and his team had burned about 13 acres, and he sat down for a breather. His face was slick with sweat and grime. The forest smoldered all around him.
+                Dr. Randerson took a moment to admire the brutal raw power of the fire they were studying - a natural, yet also unnatural way of safeguarding the land. "The older I get;' he said, "the more I appreciate how much of science is like an art:'
+            </p>
+        </section>
+    </article>
+</body>
+
+</html>
