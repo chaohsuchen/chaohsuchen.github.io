@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 14-1</title>
+	    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	    <script>
+	    	let index = 0;
+	    	window.onload = function () {
+	    		$('p > button').on('click', function() {
+	    			$('body > span').eq(index).addClass('lightUp');
+	    			index++;
+	    		});
+	    	}
+	    </script>
+	    <style>
+	    	body {
+	    		text-align: center;
+	    	}
+
+	    	span {
+	    		display: inline-block;
+	    		margin: 10px;
+	    		width: 60px;
+	    		height: 60px;
+	    		background-color: red;
+	    		color: white;
+	    		font-family: sans-serif;
+	    		font-size: 50px;
+	    		line-height: 60px;
+	    		opacity: 0;
+	    		animation: swingChangeBgColor 3s linear infinite alternate;
+	    	}
+
+	    	span.lightUp {
+	    		opacity: 1;
+	    		transition: opacity 0.5s ease-out;
+	    		animation: swingChangeBgColor 3s linear infinite alternate;
+	    	}
+
+	    	@keyframes swingChangeBgColor {
+	    		0% {
+	    			background-color: red;
+	    			transform: rotate(-10deg);
+	    		}
+
+	    		50% {
+	    			background-color: green;
+	    			transform: rotate(0deg);
+	    		}
+
+	    		100% {
+	    			background-color: red;
+	    			transform: rotate(10deg);
+	    		}
+	    	}
+	    </style>
+	</head>
+
+	<body>
+	    <span>M</span>
+	    <span>e</span>
+	    <span>r</span>
+	    <span>r</span>
+	    <span>y</span>
+	    <span>C</span>
+	    <span>h</span>
+	    <span>r</span>
+	    <span>i</span>
+	    <span>s</span>
+	    <span>t</span>
+	    <span>m</span>
+	    <span>a</span>
+	    <span>s</span>
+	    <span>!</span>
+	    <p>
+	    	<button>Light Up!</button>
+	    </p>
+	</body>
+
+</html>

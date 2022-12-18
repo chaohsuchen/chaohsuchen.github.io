@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 14-4</title>
+	    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	    <script>
+	    	var menuOpen = false;
+	    	window.onload = function () {
+	    		$('nav > a:first-of-type').on('click', function() {
+	    			let menuItems = $('nav > a:not(:first-of-type)');
+	    			menuItems.each(function (index) {
+	    					if(menuOpen) {
+								$(this).delay(1000 / (index + 1) ).fadeToggle();
+								menuOpen = false;
+	    					}
+	    					else {
+								$(this).delay(index * 500).fadeToggle();
+								menuOpen = true;
+	    					}
+	    				});	
+	    			});
+	    	};
+	    </script>
+	    <style>
+	    	nav > a {
+	    		padding: 2px 10px;
+	    		background-color: darkgrey;
+	    		color: black;
+	    		font-size: 150%;
+	    		font-family: sans-serif;
+	    	}
+
+	    	nav > a:not(:first-of-type) {
+	    		display: none;
+	    		border-left: 2px solid white;
+	    	}
+	    </style>
+	</head>
+	<body>
+	    <nav>
+	    	<a>+</a><a>Item 1</a><a>Item 2</a><a>Item3</a>
+	    </nav>
+	</body>
+
+</html>

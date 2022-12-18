@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Example 14-3</title>
+		<meta charset="utf-8">
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+		<script>
+			window.onload = function () {
+				// Bind a clicking event to the first <div>
+				$('div').eq(0).on('click', function () {
+					/* When the event is fired, use animate() to make some
+					   gradual changes in the element's CSS settings.
+					   animate() by default takes two types of data: (1) an
+					   object specifying the new CSS settings, and (2) a
+					   numeric value representing the length of the gradual change.
+					   In the statement below, the width and height are changed
+					   from 60px to 120px simultaneously after 500ms.
+					*/
+					$(this).animate(
+						{width: '120px', height: '120px'},
+						500
+					);
+				});
+
+				// Bind a clicking event to the second <div>
+				$('div').eq(1).on('click', function () {
+					/* It's also possible to create a series of changes using animate().
+					   In the statement below with animate(), the width will change to
+					   240px in 1000ms. When the change is done, a "callback" function
+					   specified as the third data type of animate() will be executed.
+					   The callback function includes another animate() statement,
+					   in which the height is gradually changed to 120px after 500ms.
+					   Thus, the width is changed first, and then the second change occurs.
+					*/
+					$(this).animate(
+						{width: '240px'},
+						1000,
+						function () {
+							$(this).animate(
+								{height: '120px'},
+								500
+							);
+						}
+					);
+				});
+			};
+		</script>
+		<style>
+			div {
+				width: 60px;
+				height: 60px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+	</body>
+</html>

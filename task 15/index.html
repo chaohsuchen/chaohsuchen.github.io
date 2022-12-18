@@ -33,46 +33,85 @@
 			body {
 				overflow-x: hidden;
 				overflow-y: hidden;
-			}
-			figure {
-				margin:  0 10vw;
-				padding: 0 0;
+			}	
+
+			h1 {
+				position: relative;
 				left: 10vw;
+				font-family: Ms Madi ;
+			}
+
+			figure {
+				height: 33.3333vh;
+				position: relative;
+				margin:  0 10vw;
+				padding: 0 0vw;
+				opacity: 0.7;
+				transition: opacity 0.3s linear;
+				overflow-y: hidden;
+			}
+
+			figure:hover {
+				opacity: 1;
+				transition: opacity 0.5s linear;
+/*				transition: font-size 1s ease;*/
+				overflow-y: hidden;
+				overflow-x: hidden;
+				font-size: 10px;
+				cursor: pointer;
+				
 			}
 
 			figcaption {
-				position: relative;
-				top: -50%;
-				color: white;
+				position: absolute;
+				color: grey;
+				font-size: 0;
+				padding: 0 10%;
+				background-color: white;
+				left: 80%;
+				overflow-x: hidden;
+				overflow-y: hidden;
+				text-align: center;
+				vertical-align: middle;
+				white-space: nowrap;
+				font-family:  Oswald;
 			}
 
-			.ND {
-				height: 33.3333vh;
+			figure:hover > figcaption {
+				animation: changeLength  0.5s ease reverse;
+				overflow-x: hidden;
+				font-size: 20px;
+			}
+		    .ND {		
 				width: 80vw;
-				object-fit: cover;
-				object-position: 100% 0;
 			}
 
 			.FD {
-				height: 33.3333vh;
 				width: 80vw;
-				object-fit: cover;
-				object-position: 100% 0;
 			}
 
 			.DC {
-				height: 33.3333vh;
 				width: 80vw;
-				object-fit: cover;
-				object-position: 100% 0;
 			}
+
+		@keyframes changeLength {
+	        from {
+	            transform: translateX(0px);
+				
+	        }
+
+	        to {
+	             transform: translateX(150px);
+	        }
+    }
 			/* Add your own CSS settings above */
 		</style>
 	</head>
 	<body>
 		<!-- Do not use inline styles in HTML tags -->
+		<h1>The Big Three in Tennis</h1>
 		<figure>
-			<figcaption>Nadal</figcaption>
+			<figcaption >Nadal</figcaption>
 			<img class="ND" src="img/Nadal.jpg">
 		</figure>
 		<figure>

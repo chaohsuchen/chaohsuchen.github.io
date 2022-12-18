@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Task 14: The Big Three</title>
+		<meta charset="utf-8">
+		<style>
+			/* Two fonts used in the demo: Ms Madi, Oswald */
+			@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&family=Oswald&display=swap');
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html {
+				height: 100%;
+				width: 100%;
+			}
+
+			body {
+				min-height: 100%;
+				width: 100%;
+			}
+
+			/* Do not change the above CSS settings */
+
+			/* Add your own CSS settings below: Note that you can add
+			   new CSS settings to same elements if necessary.
+			 */
+
+			body {
+				padding: 0 10vw;
+			}
+
+			h1 {
+				height: 10vh;
+				background-color: white;
+				color: darkslategray;
+				font-size: 5vh;
+				font-family: Ms Madi;
+				line-height: 10vh;
+			}
+
+			figure {
+				position: relative;
+				height: 30vh;
+				overflow-y: hidden;
+			}
+
+			figure > img {
+				width: 100%;
+				opacity: 0.6;
+				transition: opacity 0.3s ease-out;
+			}
+
+			figure:hover > img {
+				opacity: 1;
+				transition: opacity 0.5s ease-out;
+				cursor: pointer;
+			}
+
+			figure > figcaption {
+				position: absolute;
+				top: 0;
+				z-index: 100;
+				right: 0;
+				width: 0;
+				padding: 1vh 0;
+				background-color: white;
+				color: darkgray;
+				font-size: 3vh;
+				font-family: Oswald;
+				text-align: center;
+				white-space: nowrap;
+				overflow-x: hidden;
+				opacity: 0.9;
+				transition: width 0.3s ease-out;
+			}
+
+			figure:hover > figcaption {
+				width: 25%;
+				transition: width 0.5s ease-in;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>The Big Three in Tennis</h1>
+		<figure>
+			<img src="img/Nadal.jpg" />
+			<figcaption>Rafael Nadal</figcaption>
+		</figure>
+		<figure>
+			<img src="img/Federer.jpg" />
+			<figcaption>Roger Federer</figcaption>
+		</figure>
+		<figure>
+			<img src="img/Djokovic.jpg" />
+			<figcaption>Novak Djokovic</figcaption>
+		</figure>
+	</body>
+</html>

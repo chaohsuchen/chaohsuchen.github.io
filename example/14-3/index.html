@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<!-- 有問題 -->
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example 14-3</title>
+	    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	    <script>
+	    	window.onload = function () {
+	    		$('div').eq(0).on('click', function () {
+	    			$(this).animate({width: '120px', height: '120px'}, 
+	    				500
+	    				);
+	    		});
+
+	    		$('div').eq(1).on('click', function () {
+	    			$(this).animate(
+	    				{width: '240px'},
+	    				1000,
+	    				function () {
+	    					$(this).animate(
+	    						{height: '120px'},
+	    						500
+	    						);
+	    				}
+	    		);
+	    	});
+	    };
+	    </script>
+	    <style>
+	    	div {
+	    		width: 60px;
+	    		height: 60px;
+	    		background-color: red;
+	    	}
+	    </style>
+	</head>
+
+	<body>
+	    <div></div>
+	    <div></div>
+	</body>
+
+</html>

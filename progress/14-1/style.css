@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins&family=Source+Sans+Pro&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	min-height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	background-color: white;
+	color: #000a16;
+	font-family: Lora, serif;
+	font-size: 2.4vh;
+	line-height: 3.6vh;
+}
+
+h1, h2, h3 {
+	font-family: Poppins, sans-serif;
+	/*font-family: serif;*/
+}
+
+h1 {
+	font-size: 4.8vh;
+	line-height: 7.2vh;
+	margin: 1vh 0; /*上下  左右*/
+}
+
+h2 {
+	font-size: 3.6vh;
+	line-height: 5.4vh;
+	margin: 0.8vh 0;
+}
+
+h3 {
+	font-size: 3vh;
+	line-height: 4.5vh;
+	margin: 0.5vh 0;
+}
+
+nav {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 999;/* let it float above all the objects*/
+	text-align: center;
+	font-family: Poppins, sans-serif;
+	font-size: 2vh;
+	line-height: 3vh;
+}
+
+nav > a {
+	display: inline-block;
+	vertical-align: middle;
+	background-color: #323232;
+	color: white;
+/*	padding:  2px 10px;*/
+	/*超連結原本會預設有下底線*/
+	text-decoration: none;
+	opacity: 0.6;
+	cursor: pointer;
+	transition: opacity 0.3s ease-out;
+
+}
+
+nav > a:first-of-type {
+	padding: 2px 10px;
+}
+
+nav > a:visited {
+	color: white;
+
+}
+
+/*By setting the color change, this will let the user know he is hovering on the nav*/
+nav > a:hover {
+	opacity: 1;
+	transition: opacity 0.5s ease-out;
+}
+
+nav > a:not(:first-of-type) {
+/*	border-left: 2px solid white;*/
+/*	display: inline-block;*/
+	width: 0;
+	overflow-x: hidden;
+	white-space: nowrap;
+	transition: width 0.3s ease-out;
+
+}
+
+nav > a.open {
+	width: 12vw;
+	transition: width 0.5s ease-out;
+	border-left: 2px solid white;
+	padding: 2px 10px;
+}
+
+nav > a > span.rotated {
+	transform: rotate(45deg);
+	transition: all 0.5s ease-out;
+}
+
+nav > a > span {
+	transition: all 0.3s ease-out;
+}
+article {
+	margin: 1.5vh 0;
+	padding: 1vh 5vw;
+}
+
+section {
+	margin: 1.2vh 0;
+}
+
+section > p {
+	/*句首縮排*/
+	text-indent: 5%;
+}
+
+p {
+	margin: 0.2vh 0;/*0.2*/
+}
+
+p.cc {
+	text-indent: unset;
+	width: fit-content;
+}
+a, a:visited {
+	color:  #323232;
+	text-decoration: underline;
+}
