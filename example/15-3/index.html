@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<!-- problem -->
+<html lang="en-us">
+	<head>
+		<title>Example 15-3</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			body {
+				background-color: blue;
+			}
+
+			nav {
+				background-color: red;
+				color: white;
+				font-family: sans-serif;
+			}
+
+			nav > div {
+				height: 5vh;
+				display: inline-block;
+				padding: 2px 10px;
+				line-height: 5vh;
+			}
+
+			article {
+				background-color: orange;
+				color: white;
+			}
+
+			@media only screen and (min-width: 1200px) {
+				nav {
+					position: absolute;
+					width: 10%;
+/*	看參考點，找position 				*/
+					left: 20%;
+				}
+
+				nav > div {
+					display: block;
+				}
+
+				article {
+					width: 60%;
+/*	與上下左右旁邊的元件距離多少				*/
+					margin-left: 30%;
+				}
+
+
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>Menu</div>
+			<div>Item 1</div>
+			<div>Item 2</div>
+		</nav>
+		<article>
+			This is an article.
+		</article>
+		
+
+	</body>
+</html>

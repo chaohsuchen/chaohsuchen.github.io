@@ -12,8 +12,8 @@ body {
 	background-color: black;
 }
 
-.cube {
-	left: 6vw;
+.cube3 {
+	left: 27vw;
 	position: relative;
 	width: 220px;
 	height: 220px;
@@ -34,7 +34,7 @@ body {
 		transform: rotateX(-30deg) rotateY(360deg);
 	}
 }
-.cube div
+.cube3 div
 {
 	position: absolute;
 	top: 0;
@@ -44,7 +44,7 @@ body {
 	transform-style: preserve-3d;
 }
 
-.cube div span {
+.cube3 div span {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -52,68 +52,69 @@ body {
 	height: 100%;
 	
 	/*	top bottom*/
-	background: linear-gradient(#330000, #ff3300);
+	background: linear-gradient(#4d4d00, #ffff1a);
 	/*	360 / 8 = 45*/
 	transform: rotateY(calc(45deg * var(--i))) translateZ(110px);
 }
 
-.top1 {
+.top3_1 {
 	position: absolute;
 	top: 0;
 	left: 0;
-
-	background: #330000;
+/*	width: 240px;
+	height: 240px;*/
+	background: #808000;
 	transform: rotateX(90deg) translateZ(110px);
 /*	opacity: 0.5;*/
 /*	border-radius: 150px;*/
 }
 
-.top2 {
-	position: absolute;
+.top3_2 {
 	color:white;
 	text-align: center;
+	position: absolute;
 	font-size: 72px;
-/*	top: 50%;*/
-	vertical-align: middle;
-	background:  #330000;
+/*	width: 300px;
+	height: 300px;*/
+	background: #808000;
 	transform: rotateX(90deg) rotateZ(45deg) translateZ(110px);
 /*	opacity: 0.5;*/
 /*	//border-radius: 150px;*/
 }
 
 
-.bottom1
+.bottom3_1
 {
 	content: '';
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 300px;
-	height: 300px;
-	background: rgba(255, 51, 0, 1);
+/*	width: 300px;
+	height: 300px;*/
+	background: rgba(200, 200, 0, 1);
 	transform: rotateX(90deg) translateZ(-250px);
-
+/*	filter: blur(20px);*/
+	/*	rgba(255, 255, 255, 0.5) /* white with 50% opacity */
+	/*0 0 120px => blurred range	*/
 	box-shadow: 
-	0 0 120px rgba(255, 0, 0, 0.2),
-	0 0 240px rgba(255, 0, 0, 0.4),
-	0 0 300px rgba(255, 0, 0, 0.6),
-	0 0 400px rgba(255, 0, 0, 0.8),
+	0 0 120px rgba(255, 255, 0, 0.2),
+	0 0 240px rgba(255, 255, 0, 0.4),
+	0 0 300px rgba(255, 255, 0, 0.6),
+	0 0 400px rgba(255, 255, 0, 0.8),
 	0 0 500px rgba(255, 0, 0, 1.0);
 
 }
 
-.bottom2
+.bottom3_2
 {
 	content: '';
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 300px;
-	height: 300px;
-	background: rgb(255, 51, 0);
+/*	width: 300px;
+	height: 300px;*/
+	background: rgba(200, 200, 0, 1);
 	transform: rotateX(90deg) rotateZ(45deg) translateZ(-250px);
-
-
 }
 
 div > a {

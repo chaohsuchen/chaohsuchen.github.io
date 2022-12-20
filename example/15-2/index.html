@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Example 15-2</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			nav {
+				background-color: red;
+				color: white;
+				font-size: sans-serif;
+			}
+
+			nav > div {
+				height: 5vh;
+				padding: 2px 10px;
+				text-align: center;
+				line-height: 5vh;
+			}
+
+			nav#desktopMenu {
+				display: none;
+			}
+
+			nav#desktopMenu > div {
+				display: inline-block;
+			}
+			
+			@media only screen and (min-width: 1200px) {
+				nav#desktopMenu {
+					display: block;
+				}
+
+				nav#mobileMenu {
+					display: none;
+				}
+			}
+
+		</style>
+	</head>
+	<body>
+		<nav id="desktopMenu">
+			<div>Menu</div>
+			<div>Item 1</div>
+			<div>Item 2</div>
+		</nav>
+		<nav id="mobileMenu">
+			<div>Menu</div>
+			<div>Item 1</div>
+			<div>Item 2</div>			
+		</nav>
+	</body>
+</html>

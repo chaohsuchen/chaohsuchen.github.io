@@ -44,6 +44,22 @@ body {
 	transform-style: preserve-3d;
 }
 
+.cube div > a:link {
+	color: red;
+}
+
+.cube div > a:visited {
+	color: red;
+}
+
+.cube div > a:hover {
+	color: orange;
+}
+
+.cube div > a {
+	text-decoration: none;
+}
+
 .cube div span {
 	position: absolute;
 	top: 0;
@@ -72,7 +88,8 @@ body {
 	position: absolute;
 	color:white;
 	text-align: center;
-	font-size: 72px;
+	font-size: 70px;
+	line-height: 220px;
 /*	top: 50%;*/
 	vertical-align: middle;
 	background:  #330000;
@@ -106,6 +123,9 @@ body {
 {
 	content: '';
 	position: absolute;
+	text-align: center;
+	font-size: 67px;
+	line-height: 220px;
 	top: 0;
 	left: 0;
 	width: 300px;
@@ -116,7 +136,3 @@ body {
 
 }
 
-div > a {
-		text-decoration: none;
-		top: 150px;
-}

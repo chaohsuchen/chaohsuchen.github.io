@@ -12,8 +12,8 @@ body {
 	background-color: black;
 }
 
-.cube {
-	left: 6vw;
+.cube2 {
+	left: 17vw;
 	position: relative;
 	width: 220px;
 	height: 220px;
@@ -34,7 +34,7 @@ body {
 		transform: rotateX(-30deg) rotateY(360deg);
 	}
 }
-.cube div
+.cube2 div
 {
 	position: absolute;
 	top: 0;
@@ -44,7 +44,22 @@ body {
 	transform-style: preserve-3d;
 }
 
-.cube div span {
+.cube2 div > a:link {
+	color: blue;
+}
+
+.cube2 div > a:visited {
+	color: blue;
+}
+
+.cube2 div > a:hover {
+	color: skyblue;
+}
+
+.cube2 div > a {
+	text-decoration: none;
+}
+.cube2 div span {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -52,71 +67,70 @@ body {
 	height: 100%;
 	
 	/*	top bottom*/
-	background: linear-gradient(#330000, #ff3300);
+	background: linear-gradient(#000080, #6666ff);
 	/*	360 / 8 = 45*/
 	transform: rotateY(calc(45deg * var(--i))) translateZ(110px);
 }
 
-.top1 {
+.top2_1 {
 	position: absolute;
 	top: 0;
 	left: 0;
-
-	background: #330000;
+/*	width: 240px;
+	height: 240px;*/
+	background: #000080;
 	transform: rotateX(90deg) translateZ(110px);
 /*	opacity: 0.5;*/
 /*	border-radius: 150px;*/
 }
 
-.top2 {
-	position: absolute;
+.top2_2 {
 	color:white;
 	text-align: center;
-	font-size: 72px;
-/*	top: 50%;*/
-	vertical-align: middle;
-	background:  #330000;
+	position: absolute;
+	font-size: 70px;
+	line-height: 220px;
+/*	width: 300px;
+	height: 300px;*/
+	background:  #000080;
 	transform: rotateX(90deg) rotateZ(45deg) translateZ(110px);
 /*	opacity: 0.5;*/
 /*	//border-radius: 150px;*/
 }
 
 
-.bottom1
+.bottom2_1
 {
 	content: '';
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 300px;
-	height: 300px;
-	background: rgba(255, 51, 0, 1);
+/*	width: 300px;
+	height: 300px;*/
+	background: rgba(128, 128, 255, 1);
 	transform: rotateX(90deg) translateZ(-250px);
-
+/*	filter: blur(20px);*/
+	/*	rgba(255, 255, 255, 0.5) /* white with 50% opacity */
+	/*0 0 120px => blurred range	*/
 	box-shadow: 
-	0 0 120px rgba(255, 0, 0, 0.2),
-	0 0 240px rgba(255, 0, 0, 0.4),
-	0 0 300px rgba(255, 0, 0, 0.6),
-	0 0 400px rgba(255, 0, 0, 0.8),
-	0 0 500px rgba(255, 0, 0, 1.0);
+	0 0 120px rgba(0, 0, 204, 0.2),
+	0 0 240px rgba(0, 0, 204, 0.4),
+	0 0 300px rgba(0, 0, 204, 0.6),
+	0 0 400px rgba(0, 0, 204, 0.8),
+	0 0 500px rgba(0, 0, 204, 1.0);
 
 }
 
-.bottom2
+.bottom2_2
 {
 	content: '';
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 300px;
-	height: 300px;
-	background: rgb(255, 51, 0);
+	font-size: 67px;
+	line-height: 220px;
+	text-align: center;
+	background: rgba(128, 128, 255, 1);
 	transform: rotateX(90deg) rotateZ(45deg) translateZ(-250px);
-
-
 }
 
-div > a {
-		text-decoration: none;
-		top: 150px;
-}
