@@ -13,7 +13,7 @@ body {
     min-height: 100%;
     width: 100%;
     overflow-x: hidden;
-    background-color: white;
+    background-color: #fee7e7;
     color: #000a16;
     line-height: 3.6vh;
     top: 10px;
@@ -21,9 +21,9 @@ body {
 
 
 nav {
-    position: fixed;
+    position: absolute;
     top: 10px;
-    left: 10px;
+    left: 40vw;
     /* let it float above all the objects*/
     z-index: 999;
     text-align: center;
@@ -41,6 +41,7 @@ nav>a {
 }
 
 section {
+    padding: 5vh 5vw;
     margin: 5vh 5vw;
     font-size: 20px;
     /*0.2*/

@@ -5,6 +5,48 @@
     <title>Bilingual Web Disgn - Chao-Hsu Chen</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+    figure {
+        position: relative;
+        height: 50vh;
+        overflow-y: hidden;
+    }
+
+    figure>img {
+        width: 100%;
+        opacity: 0.6;
+        transition: opacity 0.3s ease-out;
+    }
+
+    figure:hover > img {
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
+        cursor: pointer;
+    }
+
+    figure>figcaption {
+        position: absolute;
+        top: 0;
+        z-index: 100;
+        right: 0;
+        width: 0;
+        padding: 1vh 0;
+        background-color: white;
+        color: darkgray;
+        font-size: 3vh;
+        font-family: Oswald;
+        text-align: center;
+        white-space: nowrap;
+        overflow-x: hidden;
+        opacity: 0.9;
+        transition: width 0.3s ease-out;
+    }
+
+    figure:hover>figcaption {
+        width: 25%;
+        transition: width 0.5s ease-in;
+    }
+    </style>
 </head>
 
 <body>
@@ -19,21 +61,18 @@
             <h1 style="background-color:red; width: fit-content;">MUN - A Turning Point</h1>
             <p>
                 Like many of my fellow students, I was naturally introverted. However, I discovered that this trait was holding me back from making new friends and seizing opportunities for personal growth. Determined to overcome my shyness, I joined the Model United Nations club and was eventually chosen to represent France as a delegate. Through this experience, I gradually built up my confidence and developed a love for socializing with others. My hard work paid off when I was recognized with an award for <b>excellence in diplomacy</b>. As I continue on my journey of self-improvement, I am grateful for the chance to have pushed myself out of my comfort zone and become a more outgoing and confident person.
-                <br><br>
-              	從前，我如多數的孩子一樣，是一位內向的孩子。但是，我逐漸發覺這種個性使我不容易交到朋友，甚至也因此錯失了許多能精進自己的機會。於是，當時的我下定決心，參加了模擬聯合國，擔任了法國代表。在一進一退之中，我學會應對進退的技巧，甚至愛上了交新朋友。最後，我很幸運地榮獲最佳外交獎，這項殊榮也成為我日後擁有外向性格的墊腳石。
             </p>
             <div>
-                <img src="img\MUN.png">
+                <figure>
+                    <img src="img\MUN.png">
+                    <figcaption>I was the delegate of France</figcaption>
+                </figure>
+                
                 <div>
                     <p>Through my participation in Model United Nations, I have honed my ability to converse and connect with new people without feeling uncomfortable or strange. This has been an invaluable asset, particularly as I have entered college and encountered many new and diverse individuals. The wisdom and confidence I have gained from MUN have allowed me to thrive in my personal and academic pursuits, and I am truly grateful for the growth and development that this experience has afforded me.</p>
-                    <br><br>
-                    因為參加了模擬聯合國，我建立起了與人們交談時的態度與方法，使得在與新朋友交談時，不會讓話題變得尷尬又無趣。這更幫助我在日後大學時快速地結交各系的朋友。
                 </div>
             </div>
-        </section>
-         <figure style="text-align: center;">
-                <img src="img\worldmap.png" width="800" height="500">
-            </figure>
+        </section> 
     </article>
 </body>
 
