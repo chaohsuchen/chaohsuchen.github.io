@@ -4,7 +4,57 @@
 <head>
     <title>Bilingual Web Disgn - Chao-Hsu Chen</title>
     <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+    figure {
+        max-width: 720px;
+        margin: 24px auto 48px auto;
+    }
+
+    img {
+        display: block;
+        height: 400%;
+        width: 100%;
+    }
+
+    #pic2 {
+/*        -webkit-filter: sepia(100%);*/
+        filter: sepia(100%);
+        transition: .4s ease-in-out;
+    }
+    }
+
+    #pic1 {
+        transform: scale(1);
+        transition: .4s ease-in-out;
+    }
+
+    #pic1:hover {
+        transform: scale(1.1);
+    }
+    </style>
+    <script>
+    //var mouseIn = false;
+    // window.onload = function() {
+    //     let menuItem1 = $('figure:first-of-type');
+    //         let menuItem2 = $('figure:not(:first-of-type)');
+    //     $('figure:first-of-type').hover(function() {
+    //         menuItem1.css('display', 'none');
+    //         // menuItem2.css('display', 'block');
+    //     }, function(){
+    //         menuItem1.css('display', 'block');
+    //         // menuItem2.css('display', 'none');
+    //     });
+
+    //     // $('figure:first-of-type').on('mouseleave', function() {
+    //     //     let menuItem1 = $('figure:first-of-type');
+    //     //     let menuItem2 = $('figure:not(:first-of-type)');
+    //     //     menuItem1.css('display', 'block');
+    //     //     menuItem2.css('display', 'none');
+    //     // });
+    // };
+    </script>
 </head>
 
 <body>
@@ -17,17 +67,20 @@
     <article>
         <section id="CS">
             <h1 style="background-color:red; width: fit-content;">CS - Jounery of Exploration</h1>
+            <figure id="pic1" style="text-align: center;">
+                <img src="img\game2.png">
+                <figcaption>code for my game</figcaption>
+            </figure>
             <p>
                 Despite the persistent myths surrounding Computer Science, which often paint it as solely a department focused on coding, I was unsure if this major was right for me before starting college. However, as I began my studies in CS a year ago, my perspective was completely transformed through the diverse array of courses that I was exposed to in the department. These experiences allowed me to truly appreciate the depth and beauty of Computer Science, which I came to understand is not just about coding, but rather, it is about empowering us to bring our creative ideas to life. Through these courses, I have gained invaluable skills and confidence in my ability to materialize my ideas, and I am grateful for the opportunity to study in such a dynamic and enriching field.
                 <br><br>
-                The ability to communicate with computers is an endlessly fascinating pursuit, and it is this passion that drives me to continually improve my skills in both front-end and back-end development. I am excited to join a tech company in the future where I can fully immerse myself in a culture of vision and advancement, using the incredible power of computer technology to achieve my goals and make a meaningful impact on the world. With hard work and determination, I believe that anything is possible and that I can, will, and must accomplish great things with the help of computers.
             </p>
-            <figure style="text-align: center;">
-                <img src="img\AI.png">
-            </figure>
-            <figure style="text-align: center;">
+            <figure id="pic2" style="text-align: center;">
                 <img src="img\game.png">
             </figure>
+            <p>
+                The ability to communicate with computers is an endlessly fascinating pursuit, and it is this passion that drives me to continually improve my skills in both front-end and back-end development. I am excited to join a tech company in the future where I can fully immerse myself in a culture of vision and advancement, using the incredible power of computer technology to achieve my goals and make a meaningful impact on the world. With hard work and determination, I believe that anything is possible and that I can, will, and must accomplish great things with the help of computers.
+            </p>
         </section>
     </article>
 </body>
