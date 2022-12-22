@@ -49,16 +49,20 @@ body {
 }
 
 .cube div > a:visited {
-	color: red;
+	color: orange;
 }
 
 .cube div > a:hover {
-	color: orange;
+	color: darkcyan;
 }
 
 .cube div > a {
 	text-decoration: none;
 }
+
+/*.buttom2 > a {
+	col
+}*/
 
 .cube div span {
 	position: absolute;
