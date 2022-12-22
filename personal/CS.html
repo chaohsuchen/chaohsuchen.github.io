@@ -19,12 +19,13 @@
     }
 
     #pic2 {
-/*        -webkit-filter: sepia(100%);*/
+        /*        -webkit-filter: sepia(100%);*/
         filter: sepia(100%);
         transition: .4s ease-in-out;
     }
 
     #pic2:hover {
+        cursor: pointer;
         filter: sepia(0);
     }
 
@@ -34,7 +35,55 @@
     }
 
     #pic1:hover {
+        cursor: pointer;
         transform: scale(1.1);
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    ul span {
+        border-right: 1px solid #bbb;
+        text-align: center;
+    }
+
+    li {
+        float: left;
+        border-right: 1px solid #bbb;
+    }
+
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .home:hover:not(.active) {
+        background-color: darkred;
+    }
+
+    .mun:hover:not(.active) {
+        background-color: darkblue;
+    }
+
+    .cs:hover:not(.active) {
+        background-color: purple;
+    }
+
+    .future:hover:not(.active) {
+        background-color: darkkhaki;
+    }
+
+    .active {
+        background-color: #04AA6D;
     }
     </style>
     <script>
@@ -61,12 +110,13 @@
 </head>
 
 <body>
-    <nav>
-        <a href="HOME.html">HOME</a>
-        <a href="MUN.html">MUN</a>
-        <a href="CS.html">CS</a>
-        <a href="FUTURE.html">Future</a>
-    </nav>
+    <ul>
+        <!-- <li><span>in order to make it be at center, so I use this text to push back all the li to the right place.</span> </li> -->
+        <li><a class="home" href="index.html">Home</a></li>
+        <li><a class="mun" href="MUN.html">MUN</a></li>
+        <li><a class="cs" href="CS.html">CS</a></li>
+        <li><a class="future" href="FUTURE.html">FUTURE</a></li>
+    </ul>
     <article>
         <section id="CS">
             <h1 style="background-color:red; width: fit-content;">CS - Jounery of Exploration</h1>
