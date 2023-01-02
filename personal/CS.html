@@ -5,18 +5,93 @@
     <title>Bilingual Web Disgn - Chao-Hsu Chen</title>
     <meta charset="utf-8">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="menu.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-    figure {
-        max-width: 720px;
-        margin: 24px auto 48px auto;
+    section#MUN>div>figure {
+        position: relative;
+        height: 50vh;
+        overflow-y: hidden;
     }
 
-    img {
-        display: block;
-        height: 400%;
+    section#MUN>div>figure>img {
         width: 100%;
+        opacity: 0.6;
+        transition: opacity 0.3s ease-out;
     }
+
+    section#MUN>div>figure:hover>img {
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
+        cursor: pointer;
+        float: left;
+    }
+
+    section#MUN>div>figure>figcaption {
+        position: absolute;
+        top: 0;
+        z-index: 100;
+        right: 0;
+        width: 0;
+        padding: 1vh 0;
+        background-color: white;
+        color: darkgray;
+        font-size: 3vh;
+        text-align: center;
+        white-space: nowrap;
+        overflow-x: hidden;
+        opacity: 0.9;
+        transition: width 0.3s ease-out;
+    }
+
+    section#MUN>div>figure:hover>figcaption {
+        width: 50%;
+        transition: width 0.5s ease-in;
+    }
+
+    ul {
+        text-align: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li {
+        float: left;
+        border-right: 1px solid #bbb;
+    }
+
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .home:hover:not(.active) {
+        background-color: darkred;
+    }
+
+    .mun:hover:not(.active) {
+        background-color: darkblue;
+    }
+
+    .cs:hover:not(.active) {
+        background-color: darkgreen;
+    }
+
+    .future:hover:not(.active) {
+        background-color: red;
+    }
+
+    .active {
+        background-color: #04AA6D;
+    }
+
 
     #pic2 {
         /*        -webkit-filter: sepia(100%);*/
@@ -85,54 +160,93 @@
     .active {
         background-color: #04AA6D;
     }
+
+    body {
+        animation: HomepageEmerge 0.9s ease-in;
+    }
+
+    @keyframes HomepageEmerge {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
     </style>
     <script>
-    //var mouseIn = false;
-    // window.onload = function() {
-    //     let menuItem1 = $('figure:first-of-type');
-    //         let menuItem2 = $('figure:not(:first-of-type)');
-    //     $('figure:first-of-type').hover(function() {
-    //         menuItem1.css('display', 'none');
-    //         // menuItem2.css('display', 'block');
-    //     }, function(){
-    //         menuItem1.css('display', 'block');
-    //         // menuItem2.css('display', 'none');
-    //     });
+    $(document).ready(() => {
+        $(document).on('scroll', delaySection);
+    });
 
-    //     // $('figure:first-of-type').on('mouseleave', function() {
-    //     //     let menuItem1 = $('figure:first-of-type');
-    //     //     let menuItem2 = $('figure:not(:first-of-type)');
-    //     //     menuItem1.css('display', 'block');
-    //     //     menuItem2.css('display', 'none');
-    //     // });
-    // };
+    function delaySection() {
+        let view_bottom = $(window).scrollTop() + $(window).height();
+        let parags = $("p.scroll_effect");
+
+        for (let i = 0; i < parags.length; i++) {
+            let current = parags.eq(i);
+
+            if (current.offset().top + 50 < view_bottom) {
+                current.css({ top: "0", opacity: "1" });
+            }
+        }
+    }
     </script>
 </head>
 
 <body>
-    <ul>
-        <!-- <li><span>in order to make it be at center, so I use this text to push back all the li to the right place.</span> </li> -->
-        <li><a class="home" href="index.html">Home</a></li>
-        <li><a class="mun" href="MUN.html">MUN</a></li>
-        <li><a class="cs" href="CS.html">CS</a></li>
-        <li><a class="future" href="FUTURE.html">FUTURE</a></li>
-    </ul>
+    <nav>
+        <div class="menu-btn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="link">Home</a>
+            <a href="CS.html" class="link">About</a>
+            <a href="" class="link">Profile</a>
+            <a href="" class="link">Contact</a>
+        </div>
+    </nav>
     <article>
-        <section id="CS">
+        <section>
             <h1 style="background-color:red; width: fit-content;">CS - Jounery of Exploration</h1>
             <figure id="pic1" style="text-align: center;">
                 <img src="img\game2.png">
                 <figcaption>code for my game</figcaption>
             </figure>
-            <p>
+            <p class="scroll_effect">
                 Despite the persistent myths surrounding Computer Science, which often paint it as solely a department focused on coding, I was unsure if this major was right for me before starting college. However, as I began my studies in CS a year ago, my perspective was completely transformed through the diverse array of courses that I was exposed to in the department. These experiences allowed me to truly appreciate the depth and beauty of Computer Science, which I came to understand is not just about coding, but rather, it is about empowering us to bring our creative ideas to life. Through these courses, I have gained invaluable skills and confidence in my ability to materialize my ideas, and I am grateful for the opportunity to study in such a dynamic and enriching field.
                 <br><br>
             </p>
             <figure id="pic2" style="text-align: center;">
                 <img src="img\game.png">
             </figure>
-            <p>
+            <p class="scroll_effect">
                 The ability to communicate with computers is an endlessly fascinating pursuit, and it is this passion that drives me to continually improve my skills in both front-end and back-end development. I am excited to join a tech company in the future where I can fully immerse myself in a culture of vision and advancement, using the incredible power of computer technology to achieve my goals and make a meaningful impact on the world. With hard work and determination, I believe that anything is possible and that I can, will, and must accomplish great things with the help of computers.
+            </p>
+        </section>
+        <section id="MUN">
+            <h1 style="background-color:red; width: fit-content;">MUN - A Turning Point</h1>
+            <p class="scroll_effect">
+                I love English, especially after participating in international camps and studying the materials for my major. I came to realize that English is like an intangible line that connects all humans and knowledge around the globe tightly. I hope to continue improving my English ability.
+            </p>
+            <br>
+            <p class="scroll_effect">However, I was like many of my friends, I was naturally introverted. However, I discovered that this trait was holding me back from making new friends and seizing opportunities for personal growth. Determined to overcome my shyness, I joined the Model United Nations club and was eventually chosen to represent France as a delegate. Through this experience, I gradually built up my confidence and developed a love for socializing with others. My hard work paid off when I was recognized with an award for <b>excellence in diplomacy</b>. As I continue on my journey of self-improvement, I am grateful for the chance to have pushed myself out of my comfort zone and become a more outgoing and confident person.
+            </p>
+            <div>
+                <figure>
+                    <img src="img\delegate.jpg">
+                    <figcaption>I was the delegate of France</figcaption>
+                </figure>
+                <div>
+                    <p class="scroll_effect">Through my participation in Model United Nations, I have honed my ability to converse and connect with new people without feeling uncomfortable or strange. This has been an invaluable asset, particularly as I have entered college and encountered many new and diverse individuals. The wisdom and confidence I have gained from MUN have allowed me to thrive in my personal and academic pursuits, and I am truly grateful for the growth and development that this experience has afforded me.</p>
+                </div>
+            </div>
+            <br>
+            <p class="scroll_effect">
+                Pursuing my master's degree abroad is an opportunity I am incredibly excited about, as it will not only allow me to meet and connect with a diverse group of individuals from around the world, but it will also give me the chance to fully immerse myself in a new and unique educational setting. I am confident that this experience will be truly transformative and enhance my personal and professional development in countless ways.
             </p>
         </section>
     </article>

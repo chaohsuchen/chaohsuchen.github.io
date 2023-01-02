@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Example 15-4</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			/* Check Example 15-5 for a better example with more detailed
+			   annotations.
+			 */
+			article {
+				display: flex;
+				flex-direction: column;
+				/* justify-content: space-evenly; */
+				/* justify-content: space-around; */
+				justify-content: space-between;
+				background-color: blue;
+			}
+
+			article > section {
+				height: 100px;
+				width: 100%;
+				padding: 10px;
+				background-color: orange;
+				color: white;
+			}
+
+			@media only screen and (min-width: 1200px) {
+				article {
+					flex-direction: row;
+				}
+
+				article > section {
+					width: initial;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<article>
+			<section>Section 1</section>
+			<section>Section 2</section>
+			<section>Section 3</section>
+			<section>Section 4</section>
+			<section>Section 5</section>
+			<section>Section 6</section>
+			<section>Section 7</section>
+			<section>Section 8</section>
+		</article>
+	</body>
+</html>

@@ -5,14 +5,95 @@
     <title>Bilingual Web Disgn - Chao-Hsu Chen</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+    var menuOpen = false;
+
+    function toggleMenuItems(event) {
+        event.stopPropagation();
+        let menuItems = $('nav > a:not(:first-of-type)');
+        if (menuOpen) {
+            menuItems.removeClass('open');
+            $('nav > a:first-of-type').removeClass('rotated');
+            menuOpen = false;
+        } else {
+            menuItems.addClass('open');
+            $('nav > a:first-of-type').addClass('rotated');
+            menuOpen = true;
+        }
+    }
+
+    function hideMenuItems() {
+        let menuItems = $('nav > a:not(:first-of-type)');
+        menuItems.removeClass('open');
+        $('nav > a:first-of-type').removeClass('rotated');
+        menuOpen = false;
+    }
+    window.onload = function() {
+        let a = $('a:first-of-type');
+        a.on('click', toggleMenuItems);
+        $(document).on('click', hideMenuItems);
+    };
+    </script>
+    <style>
+/*    h1 {
+        font-family: adobe-fan-heiti-std, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+    }*/
+
+    a:first-of-type {
+        width: 100px;
+        height: 100px;
+    }
+
+    a:first-of-type.rotated {
+        transform: rotate(45deg);
+        opacity: 0.7;
+        transition: all 0.5s linear;
+    }
+
+    a:first-of-type {
+        opacity: 1;
+        display: inline-block;
+        transition: all 0.3s linear;
+    }
+
+    a:not(:first-of-type) {
+
+        /*        opacity: 0;*/
+        z-index: 0;
+        transition: changeFunction 0.5s ease-out;
+        /*        transform: translateY(0);*/
+    }
+
+    a:not(:first-of-type).open {
+        display: inline-block;
+        /*        opacity: 1;*/
+        transition: changeFunction 1s linear;
+    }
+
+    @keyframes changeFunction {
+        from {
+            transform: translateX(10px);
+        }
+
+        to {
+            transform: translateX(500px);
+            opacity: 1;
+            z-index: 999;
+        }
+    }
+    </style>
 </head>
 
 <body>
     <nav>
-        <a href="index.html">主頁</a>
-        <a href="MUN_chi.html">模聯</a>
-        <a href="CS_chi.html">資工</a>
-        <a href="FUTURE_chi.html">未來</a>
+        <a><img src="img\plus.png"></a>
+        <a href="index.html"><img src="img\home.png"></a>
+        <a href="MUN_chi.html"><img src="img\head.png"></a>
+        <a href="CS_chi.html"><img src="img\article.png"></a>
+        <!-- <a href="FUTURE_chi.html">未來</a> -->
     </nav>
     <article>
         <section id="CS">

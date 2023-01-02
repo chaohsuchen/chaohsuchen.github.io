@@ -1,0 +1,52 @@
+@import url(https://fonts.googleapis.com/css?family=Mandali);
+
+html{
+  height: 100%;
+  font-family: 'Mandali';
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+p {
+  color: white;
+}
+.backDrop {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(10,15,20);
+}
+
+.pixel {
+  display: none;
+  height: 4px;
+  width: 4px;
+  border-radius: 2px;
+  position: absolute;
+  background-color: rgb(128,128,128);
+}
+
+.pageTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageTop h1 {
+  padding: 0.125em 0.25em;
+  background-color: rgba(50, 70, 80, 0.33);
+  border-radius: 0.125em;
+  color: rgba(50, 70, 80, 0.65);
+}

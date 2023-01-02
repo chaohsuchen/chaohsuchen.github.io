@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+}
+
+h1 > span{
+  position: absolute;
+  left: 40vw;
+  color: white;
+
+}
+#sun, #Earth, #Jupiter, #Neptune {
+  background: yellow;
+  border-radius: 50%;
+  box-shadow: 0 0 10px orange;
+  transform: translate(48vw, 40vh);
+  position: absolute;
+}
+
+#sun {
+  width: 120px;
+  height: 120px;
+}
+
+
+#Earth {
+  background: blue;
+  box-shadow: 0 0 10px white;
+  width: 30px;
+  height: 30px;
+}
+
+#Jupiter {
+  background: gold;
+  box-shadow: 0 0 10px white;
+    width: 60px;
+  height: 60px;
+}
+
+#Neptune {
+  background: #0d98ba;
+  box-shadow: 0 0 10px white;
+    width: 50px;
+  height: 50px;
+}
+
+div > span {
+  position: absolute;
+  top: 60%;
+  padding: 10%;
+  color: whitesmoke;
+  }
