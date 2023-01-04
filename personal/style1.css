@@ -54,7 +54,7 @@ body {
 }
 
 .cube div > a:hover {
-	color: darkcyan;
+	color: white;
 }
 
 .cube div > a {
