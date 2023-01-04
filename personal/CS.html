@@ -6,7 +6,13 @@
     <meta charset="utf-8">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="menu.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Arvo&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Arvo&display=swap');
+    </style>
     <style>
     section#MUN>div>figure {
         position: relative;
@@ -141,28 +147,21 @@
         text-decoration: none;
     }
 
-    .home:hover:not(.active) {
-        background-color: darkred;
-    }
-
-    .mun:hover:not(.active) {
-        background-color: darkblue;
-    }
-
-    .cs:hover:not(.active) {
-        background-color: purple;
-    }
-
-    .future:hover:not(.active) {
-        background-color: darkkhaki;
-    }
-
-    .active {
-        background-color: #04AA6D;
+    article>section>p {
+        line-height: 60px;
+        font-family: 'Arvo', serif;
+        font-size: 110%;
     }
 
     body {
-        animation: HomepageEmerge 0.9s ease-in;
+        animation: HomepageEmerge 1.5s ease-in;
+    }
+
+    span > h1 {
+        position: absolute;
+        left: 45vw;
+        top: 5vh;
+        color: blueviolet;
     }
 
     @keyframes HomepageEmerge {
@@ -205,23 +204,27 @@
         <div class="nav-links">
             <a href="index.html" class="link">Home</a>
             <a href="CS.html" class="link">About</a>
-            <a href="" class="link">Profile</a>
-            <a href="" class="link">Contact</a>
+            <a href="sun.html" class="link">Universe</a>
+            <a href="CS_chi.html" class="link">Chinese version</a>
         </div>
     </nav>
+    <span><h1>About Me</h1></span>
     <article>
         <section>
             <h1 style="background-color:red; width: fit-content;">CS - Jounery of Exploration</h1>
             <figure id="pic1" style="text-align: center;">
                 <img src="img\game2.png">
-                <figcaption>code for my game</figcaption>
+                <figcaption style="font-family: 'Anton', sans-serif;">code for my game (hover it!)</figcaption>
             </figure>
             <p class="scroll_effect">
                 Despite the persistent myths surrounding Computer Science, which often paint it as solely a department focused on coding, I was unsure if this major was right for me before starting college. However, as I began my studies in CS a year ago, my perspective was completely transformed through the diverse array of courses that I was exposed to in the department. These experiences allowed me to truly appreciate the depth and beauty of Computer Science, which I came to understand is not just about coding, but rather, it is about empowering us to bring our creative ideas to life. Through these courses, I have gained invaluable skills and confidence in my ability to materialize my ideas, and I am grateful for the opportunity to study in such a dynamic and enriching field.
                 <br><br>
             </p>
+        </section>
+        <section>
             <figure id="pic2" style="text-align: center;">
                 <img src="img\game.png">
+                <figcaption style="font-family: 'Anton', sans-serif;">Menu for my game (hover it!)</figcaption>
             </figure>
             <p class="scroll_effect">
                 The ability to communicate with computers is an endlessly fascinating pursuit, and it is this passion that drives me to continually improve my skills in both front-end and back-end development. I am excited to join a tech company in the future where I can fully immerse myself in a culture of vision and advancement, using the incredible power of computer technology to achieve my goals and make a meaningful impact on the world. With hard work and determination, I believe that anything is possible and that I can, will, and must accomplish great things with the help of computers.
@@ -238,10 +241,11 @@
             <div>
                 <figure>
                     <img src="img\delegate.jpg">
-                    <figcaption>I was the delegate of France</figcaption>
+                    <figcaption style="font-family: 'Anton', sans-serif;">I was the delegate of France</figcaption>
                 </figure>
                 <div>
-                    <p class="scroll_effect">Through my participation in Model United Nations, I have honed my ability to converse and connect with new people without feeling uncomfortable or strange. This has been an invaluable asset, particularly as I have entered college and encountered many new and diverse individuals. The wisdom and confidence I have gained from MUN have allowed me to thrive in my personal and academic pursuits, and I am truly grateful for the growth and development that this experience has afforded me.</p>
+                    <p class="scroll_effect" style="font-family: 'Arvo', serif; line-height: 60px;
+        font-size: 110%;">Through my participation in Model United Nations, I have honed my ability to converse and connect with new people without feeling uncomfortable or strange. This has been an invaluable asset, particularly as I have entered college and encountered many new and diverse individuals. The wisdom and confidence I have gained from MUN have allowed me to thrive in my personal and academic pursuits, and I am truly grateful for the growth and development that this experience has afforded me.</p>
                 </div>
             </div>
             <br>

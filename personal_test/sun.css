@@ -6,17 +6,38 @@ body {
   background: #000;
 }
 
+section {
+  margin: 5vh 4vw;
+}
+
 h1 > span{
   position: absolute;
   left: 40vw;
   color: white;
 
 }
+
+div.up
+{
+    position: relative;
+    top: 150px;
+    opacity: 0.5;
+    transition: all 0.5s ease-in-out;
+}
+
+
+#topic {
+  margin: 0 30vw;
+  color: yellow;
+  font-size: 50px;
+}
+
+
 #sun, #Earth, #Jupiter, #Neptune {
   background: yellow;
   border-radius: 50%;
   box-shadow: 0 0 10px orange;
-  transform: translate(48vw, 40vh);
+  transform: translate(48vw, 60vh);
   position: absolute;
 }
 
@@ -47,9 +68,35 @@ h1 > span{
   height: 50px;
 }
 
-div > span {
+article {
   position: absolute;
-  top: 60%;
+  top: 90vh;
   padding: 10%;
-  color: whitesmoke;
-  }
+}
+
+section {
+  margin: 20% 0;
+}
+
+div > p {
+  margin: 70px 0;
+  color: white;
+  font-size: 30px;
+  font-family: 'Russo One', sans-serif;
+  text-align: justify;
+}
+
+
+div > figure > p {
+  margin: 70px 0;
+  color: white;
+  font-size: 30px;
+  font-family: 'Russo One', sans-serif;
+  text-align: justify;
+}
+
+img {
+  max-width: 30vw;
+  margin: 10px;
+  border-radius: 10%;
+}

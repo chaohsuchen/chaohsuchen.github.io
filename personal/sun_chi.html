@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="sun.js"></script>
+    <script src="menu.js"></script>
+    <link rel="stylesheet" type="text/css" href="sun.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Russo+One&display=swap" rel="stylesheet">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Russo+One&display=swap');
+    </style>
+    <title>sun</title>
+    <script>
+    $(document).ready(() => {
+        $(document).on('scroll', delaySection);
+    });
+
+    function delaySection() {
+        let view_bottom = $(window).scrollTop() + $(window).height();
+        let parags = $("div.up");
+
+        for (let i = 0; i < parags.length; i++) {
+            let current = parags.eq(i);
+
+            if (current.offset().top + 50 < view_bottom) {
+                current.css({ top: "0", opacity: "1" });
+            }
+        }
+    }
+    </script>
+</head>
+
+<body>
+  <nav>
+        <div class="menu-btn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="link">主頁</a>
+            <a href="CS_chi.html" class="link">關於我</a>
+            <a href="sun_chi.html" class="link">宇宙</a>
+            <a href="sun.html" class="link">英文版</a>
+        </div>
+    </nav>
+    <h1 style="font-family: 'Lobster', cursive;"><span>太陽系中最迷人的三行星</span></h1>
+    <div id="sun"></div>
+    <div id="Earth"></div>
+    <div id="Jupiter"></div>
+    <div id="Neptune"></div>
+    <article>
+        <section>
+            <div class="up">
+                <p>
+                    我是一位天文愛好者，也曾是清華大學天文社的一員。在太陽系的行星中，地球、木星和海王星是我最感興趣的三顆星球，也是我的研究領域。希望你們喜歡學習有關它們的知識！
+                </p>
+            </div>
+        </section>
+        <section>
+            <div class="up" id="first_div">
+                <span id="topic">Earth</span>
+                <figure>
+                    <img src="planet_img/magnetic.png" style="float: right;">
+                    <p>
+                        地球是一個神奇而獨特的星球。地球最有趣的事情之一是它的大氣層，它由多種氣體組成，可以保護地球免受有害的太陽輻射，並使生命有可能在其表面存在。這種大氣在水循環中也起著至關重要的作用，水循環有助於調節地球的溫度並支持生命。除了大氣層外，地球還有一個磁場，有助於保護地球免受太陽風的影響，並產生北極光和南極光。這個磁場是由行星外核中鐵水的運動產生的，它有助於保護行星免受太陽發射的帶電粒子的影響。
+                    </p>
+                </figure>
+            </div>
+            <div class="up">
+                <figure>
+                    <img src="planet_img/bio.jpg" style="float: left;">
+                    <p>
+                        從最高的山脈到最深的海洋，地球是一個擁有令人難以置信的生物多樣性的地方，擁有適應在各種不同環境中繁衍生息的物種。除了自然美景，地球還是一個科技進步巨大的地方。人類已經能夠以令人難以置信的細節探索和了解這個星球，並且我們將繼續對其歷史和過程做出新的發現。總的來說，地球是一個神奇而迷人的地方，擁有豐富而復雜的歷史，並不斷發展和變化。這是一個我們都應該珍惜和保護的地方，我們有責任確保它在將來仍是移居的星球。
+                    </p>
+                </figure>
+            </div>
+        </section>
+        <section>
+            <div class="up">
+                <span id="topic">Jupiter</span>
+                <figure>
+                    <img src="planet_img/jupiter.jpg" style="float: right;">
+                    <p>
+                        木星是一顆氣態巨行星，這意味著它主要由氫和氦組成。這是一顆值得研究的迷人行星，因為它可以讓我們深入了解太陽系的早期歷史。這顆行星被認為形成於大約 45 億年前，大致與太陽係其他部分形成的時間相同。木星被認為在太陽系的起源中發揮了至關重要的作用，它幫助清除了其他行星形成後遺留下來的小碎片。
+                    </p>
+                </figure>
+            </div>
+            <div class="up">
+                <figure>
+                    <img src="https://static.scientificamerican.com/sciam/cache/file/FF8F1392-219B-416E-A2D5E3955D8C4773_source.gif?w=590&h=800&07ED9966-9503-40A6-BE064A5E8864843B" alt="this is a gif" style="float: left;">
+                    <p>
+                        木星還以其強風和風暴而聞名，這些風暴是由其快速旋轉產生的熱量驅動的。木星上的風速可達每小時 600 多英里。儘管距離太陽很遠，但木星實際上是夜空中最亮的天體之一。肉眼可見，即使在白天也經常用肉眼可見。這是因為這顆行星將大量光線反射回太空，因此很容易被發現。
+                    </p>
+                </figure>
+            </div>
+        </section>
+        <section>
+            <div class="up">
+                <span id="topic">Neptune</span>
+                <figure>
+                    <img src="planet_img/neptune.jpg" style="float: right;">
+                    <p>
+                        海王星和木星一樣是一顆氣態巨行星，這意味著它主要由氫和氦組成。它也以其獨特的藍色而聞名，這是由大氣中的甲烷造成的。海王星是太陽系中最遙遠的行星，距離太陽約 27 億英里。海王星最有趣的事情之一是它的大氣層，它由許多具有不同溫度和風速的層組成。這個星球上的風非常大，有些風速達到每小時 1,000 英里以上。這些風是由行星快速旋轉產生的熱量驅動的。
+                    </p>
+                </figure>
+            </div>
+            <div class="up">
+                <figure>
+                    <img src="planet_img/voyager.jpg" style="float: left;">
+                    <p>
+                        儘管離太陽很遠，海王星並不是一顆特別冷的行星。這是因為它能夠通過稱為放射性衰變的過程產生自己的熱量，放射性衰變發生在行星內部衰變並釋放能量時。航海者 2 號航天器僅在 1989 年經過海王星一次。在飛越期間，航天器能夠捕捉到行星及其衛星的圖像，並且還收集了有關海王星大氣層和磁場的數據。總的來說，海王星是一顆迷人而神秘的行星。
+                    </p>
+                </figure>
+            </div>
+        </section>
+    </article>
+</body>
+
+</html>

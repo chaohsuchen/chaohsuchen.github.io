@@ -4,108 +4,261 @@
 <head>
     <title>Bilingual Web Disgn - Chao-Hsu Chen</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script>
-    var menuOpen = false;
-
-    function toggleMenuItems(event) {
-        event.stopPropagation();
-        let menuItems = $('nav > a:not(:first-of-type)');
-        if (menuOpen) {
-            menuItems.removeClass('open');
-            $('nav > a:first-of-type').removeClass('rotated');
-            menuOpen = false;
-        } else {
-            menuItems.addClass('open');
-            $('nav > a:first-of-type').addClass('rotated');
-            menuOpen = true;
-        }
-    }
-
-    function hideMenuItems() {
-        let menuItems = $('nav > a:not(:first-of-type)');
-        menuItems.removeClass('open');
-        $('nav > a:first-of-type').removeClass('rotated');
-        menuOpen = false;
-    }
-    window.onload = function() {
-        let a = $('a:first-of-type');
-        a.on('click', toggleMenuItems);
-        $(document).on('click', hideMenuItems);
-    };
-    </script>
+    <script src="menu.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-/*    h1 {
-        font-family: adobe-fan-heiti-std, sans-serif;
-        font-style: normal;
-        font-weight: 400;
-    }*/
-
-    a:first-of-type {
-        width: 100px;
-        height: 100px;
+    section#MUN>div>figure {
+        position: relative;
+        height: 50vh;
+        overflow-y: hidden;
     }
 
-    a:first-of-type.rotated {
-        transform: rotate(45deg);
-        opacity: 0.7;
-        transition: all 0.5s linear;
+    section#MUN>div>figure>img {
+        width: 100%;
+        opacity: 0.6;
+        transition: opacity 0.3s ease-out;
     }
 
-    a:first-of-type {
+    section#MUN>div>figure:hover>img {
         opacity: 1;
-        display: inline-block;
-        transition: all 0.3s linear;
+        transition: opacity 0.5s ease-out;
+        cursor: pointer;
+        float: left;
     }
 
-    a:not(:first-of-type) {
-
-        /*        opacity: 0;*/
-        z-index: 0;
-        transition: changeFunction 0.5s ease-out;
-        /*        transform: translateY(0);*/
+    section#MUN>div>figure>figcaption {
+        position: absolute;
+        top: 0;
+        z-index: 100;
+        right: 0;
+        width: 0;
+        padding: 1vh 0;
+        background-color: white;
+        color: darkgray;
+        font-size: 3vh;
+        text-align: center;
+        white-space: nowrap;
+        overflow-x: hidden;
+        opacity: 0.9;
+        transition: width 0.3s ease-out;
     }
 
-    a:not(:first-of-type).open {
-        display: inline-block;
-        /*        opacity: 1;*/
-        transition: changeFunction 1s linear;
+    section#MUN>div>figure:hover>figcaption {
+        width: 50%;
+        transition: width 0.5s ease-in;
     }
 
-    @keyframes changeFunction {
-        from {
-            transform: translateX(10px);
+    ul {
+        text-align: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li {
+        float: left;
+        border-right: 1px solid #bbb;
+    }
+
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .home:hover:not(.active) {
+        background-color: darkred;
+    }
+
+    .mun:hover:not(.active) {
+        background-color: darkblue;
+    }
+
+    .cs:hover:not(.active) {
+        background-color: darkgreen;
+    }
+
+    .future:hover:not(.active) {
+        background-color: red;
+    }
+
+    .active {
+        background-color: #04AA6D;
+    }
+
+
+    #pic2 {
+        /*        -webkit-filter: sepia(100%);*/
+        filter: sepia(100%);
+        transition: .4s ease-in-out;
+    }
+
+    #pic2:hover {
+        cursor: pointer;
+        filter: sepia(0);
+    }
+
+    #pic1 {
+        transform: scale(1);
+        transition: .4s ease-in-out;
+    }
+
+    #pic1:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    ul span {
+        border-right: 1px solid #bbb;
+        text-align: center;
+    }
+
+    li {
+        float: left;
+        border-right: 1px solid #bbb;
+    }
+
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .home:hover:not(.active) {
+        background-color: darkred;
+    }
+
+    .mun:hover:not(.active) {
+        background-color: darkblue;
+    }
+
+    .cs:hover:not(.active) {
+        background-color: purple;
+    }
+
+    .future:hover:not(.active) {
+        background-color: darkkhaki;
+    }
+
+    .active {
+        background-color: #04AA6D;
+    }
+
+    body {
+        animation: HomepageEmerge 0.9s ease-in;
+    }
+
+    article>section>p {
+        line-height: 60px;
+        font-size: 110%;
+    }
+
+    @keyframes HomepageEmerge {
+        0% {
+            opacity: 0;
         }
 
-        to {
-            transform: translateX(500px);
+        100% {
             opacity: 1;
-            z-index: 999;
         }
     }
     </style>
+    <script>
+    $(document).ready(() => {
+        $(document).on('scroll', delaySection);
+    });
+
+    function delaySection() {
+        let view_bottom = $(window).scrollTop() + $(window).height();
+        let parags = $("p.scroll_effect");
+
+        for (let i = 0; i < parags.length; i++) {
+            let current = parags.eq(i);
+
+            if (current.offset().top + 50 < view_bottom) {
+                current.css({ top: "0", opacity: "1" });
+            }
+        }
+    }
+    </script>
 </head>
 
 <body>
     <nav>
-        <a><img src="img\plus.png"></a>
-        <a href="index.html"><img src="img\home.png"></a>
-        <a href="MUN_chi.html"><img src="img\head.png"></a>
-        <a href="CS_chi.html"><img src="img\article.png"></a>
-        <!-- <a href="FUTURE_chi.html">未來</a> -->
+        <div class="menu-btn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="link">主頁</a>
+            <a href="CS_chi.html" class="link">關於我</a>
+            <a href="sun_chi.html" class="link">宇宙</a>
+            <a href="CS.html" class="link">英文版</a>
+        </div>
     </nav>
     <article>
-        <section id="CS">
-            <h1 style="background-color:red; width: fit-content;">CS - Jounery of Exploration</h1>
-            <p>
-                當提起資工系，多數人會認為資工系的學生只是在學程式，而我也曾因為這項原因，帶著懷疑與不確定進入了資工系。然而，我逐漸意識到資工系其實教會我的不僅是撰寫程式，更教會如何將想法優化，並且將其實踐於電腦之中。
-                <br><br>
-                我一直以來認為能與電腦溝通是一件有趣且令人著迷的事，而這也是我學習的動力來源，不論是前端或是後端。我也期待未來能在科技公司當工程師，當一個有理想與抱負的人。
-            </p>
-            <figure style="text-align: center;">
-                <img src="img\CS.jpg" width="800" height="300">
+        <section>
+            <h1 style="background-color:red; width: fit-content;">資工: 一趟探索中的旅程</h1>
+            <figure id="pic1" style="text-align: center;">
+                <img src="img\game2.png">
+                <figcaption>遊戲的一小部分程式碼(滑鼠移上去試試)</figcaption>
             </figure>
+            <p class="scroll_effect">
+                人們常常將資工描繪成一個專注於寫程式的部門，所以在開始上大學之前，我不確定這個專業是否適合我。然而，當我一年前開始學習門科學時，並接觸到各種課程後，我的觀念完全轉變。這些經歷讓我真正體會到資訊工程科學的深度和美麗，我開始明白這不僅僅是關於編程式，而是賦予我們將創意變為現實的能力。通過這些課程，我獲得了寶貴的技能，並對自己實現想法的能力充滿信心，我很高興有機會在這樣一個充滿活力和豐富的領域學習。
+                <br><br>
+            </p>
+        </section>
+        <section>
+            <figure id="pic2" style="text-align: center;">
+                <img src="img\game.png">
+                <figcaption>遊戲的主頁面(滑鼠移上去試試)</figcaption>
+            </figure>
+            <p class="scroll_effect">
+                我希望能與電腦交流，而這目標成為一種無窮無盡的動力。熱情驅使我不斷提高我在前端和後端開發方面的技能。我很希望將來能加入一家科技公司，在那裡我可以完全沉浸在一種有遠見和進步的文化中，利用電腦技術的力量來實現我的目標並對世界產生有意義的影響。通過努力和決心，我相信一切都有可能。
+            </p>
+        </section>
+        <section id="MUN">
+            <h1 style="background-color:red; width: fit-content;">模聯: 我的轉捩點</h1>
+            <p class="scroll_effect">
+                我喜歡英語，尤其是在參加了模連和學習了我的專業資料之後。我開始意識到，英語就像一條無形的線，將全球所有的人類和知識緊緊地聯繫在一起。我希望繼續提高我的英語能力。
+            </p>
+            <br>
+            <p class="scroll_effect">
+                之前我的個性蠻內向的。然而，我發現這種特質阻礙了我結交新朋友和抓住個人成長的機會。為了克服，我參加了模擬聯合國，並最終被選為法國代表。通過這次經歷，我逐漸建立了自信，也愛上了與人交往。當我獲得
+                <b>最佳外交</b>獎時，我的努力得到了回報。在我繼續自我提升的過程中，我很感激有機會能跳脫舒適區，成為一個更加外向和自信的人。
+            </p>
+            <div>
+                <figure>
+                    <img src="img\delegate.jpg">
+                    <figcaption>我是法國代表</figcaption>
+                </figure>
+                <div style="line-height: 60px; font-size: 110%;">
+                    <p class="scroll_effect">
+                        通過參加模擬聯合國，我磨練了與他人交談和交流的能力，而不會感到不舒服或陌生。這是一筆寶貴的財富，尤其是當我進入大學並遇到許多不同的人時。我從模擬聯合國獲得的智慧和信心幫助我在個人和學術追求中茁壯成長，我真的很感激這段經歷給我的成長和發展。</p>
+                </div>
+            </div>
+            <br>
+            <p class="scroll_effect">
+                最後，希望在未來，我能在國外攻讀碩士學位，因為它不僅能讓我結識來自世界各地的不同的人，而且還能讓我有機會完全沉浸在一個新穎獨特的教育環境。
+            </p>
         </section>
     </article>
 </body>
