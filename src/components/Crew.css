@@ -1,0 +1,487 @@
+.crew {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.crew-stage {
+  position: relative;
+  width: 100%;
+}
+.crew-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* ───── characters ───── */
+.char {
+  cursor: pointer;
+  outline: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.char:focus-visible .char-inner,
+.char:focus-visible .head-float {
+  stroke-width: 4.5;
+}
+.char-alice {
+  --c: var(--ai1);
+  --fill: #08161c;
+  stroke: var(--ai1);
+}
+.char-chao {
+  --c: var(--human);
+  --fill: #1c140b;
+  stroke: var(--human);
+}
+.char-bob {
+  --c: var(--ai2);
+  --fill: #120f22;
+  stroke: var(--ai2);
+}
+.char .fill {
+  fill: var(--fill);
+}
+.char .eye {
+  fill: #f6f4ff;
+  stroke-width: 2;
+}
+.char .pupil {
+  fill: #07070d;
+  stroke: none;
+}
+.char .shine {
+  fill: #fff;
+  stroke: none;
+}
+.char .smile {
+  stroke-width: 3;
+}
+.char .hair {
+  fill: var(--human);
+  fill-opacity: 0.85;
+}
+.char .blush {
+  fill: var(--pink);
+  stroke: none;
+  opacity: 0.35;
+  transition: opacity 0.4s;
+}
+/* agent parts: dark screen faces with glowing LED eyes read as "AI", not "alien" */
+.char .visor {
+  fill: #03060c;
+  stroke-width: 2;
+  stroke-opacity: 0.6;
+}
+.char .led {
+  fill: var(--c);
+  stroke: none;
+}
+.char .led-line {
+  stroke-width: 3;
+}
+.char .eye-ring {
+  stroke-width: 2.2;
+  stroke-opacity: 0.7;
+}
+.char .band {
+  stroke-width: 3.4;
+}
+.char .panel {
+  fill: #03060c;
+  stroke-width: 2;
+}
+.char .led-dot {
+  fill: var(--c);
+  stroke: none;
+  animation: think 1.2s ease-in-out infinite;
+}
+@keyframes think {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.char .check {
+  stroke-width: 2.4;
+  stroke-dasharray: 24;
+  animation: check 3.2s ease-in-out infinite;
+}
+.char .antenna {
+  fill: var(--ai1);
+  animation: antenna 1.8s ease-in-out infinite;
+}
+
+.char .head-float {
+  animation: idle-float 3.4s ease-in-out infinite;
+}
+.char-chao .head-float {
+  animation-delay: -1.1s;
+}
+.char-bob .head-float {
+  animation-delay: -2.2s;
+}
+.char .eyes {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: blink 5.2s infinite;
+}
+.char-chao .eyes {
+  animation-delay: 1.7s;
+  animation-duration: 6.1s;
+}
+.char-bob .eyes {
+  animation-delay: 3.1s;
+  animation-duration: 4.7s;
+}
+.char-inner {
+  transition: transform 0.3s;
+}
+.char:hover .char-inner,
+.char:hover .head-float {
+  stroke-width: 3.6;
+}
+
+.arm-free {
+  transform-box: fill-box;
+  transition: transform 0.5s var(--ease);
+}
+.arm-free-l {
+  transform-origin: 100% 0%;
+}
+.arm-free-r {
+  transform-origin: 0% 0%;
+}
+
+@keyframes idle-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+@keyframes blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.08);
+  }
+}
+@keyframes antenna {
+  50% {
+    fill: #fff;
+    r: 7.5;
+  }
+}
+@keyframes check {
+  0%,
+  20% {
+    stroke-dashoffset: 24;
+  }
+  50%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ───── links & pulses: energy flowing between human and agents ───── */
+.pulse {
+  stroke: #fff;
+  stroke-dasharray: 7 93;
+  filter: drop-shadow(0 0 4px #fff);
+  animation: pulse-flow 2.6s linear infinite;
+}
+.pulse-r {
+  animation-delay: -1.3s;
+}
+@keyframes pulse-flow {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.clasp {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: clasp 2.6s ease-in-out infinite;
+}
+@keyframes clasp {
+  0%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+}
+
+.sparkles path {
+  fill: #fff;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sparkle 3.2s ease-in-out infinite;
+}
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: scale(0.4) rotate(0deg);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1) rotate(45deg);
+  }
+}
+.craters ellipse {
+  fill: #000;
+}
+
+/* ───── reactions to nav hover ───── */
+.crew-body {
+  transition: transform 0.4s var(--ease);
+}
+.mode-contests .crew-body {
+  animation: hop 0.7s var(--ease) infinite;
+}
+.mode-contact .arm-free-l {
+  animation: wave-l 0.9s ease-in-out infinite;
+}
+.mode-contact .arm-free-r {
+  animation: wave-r 0.9s ease-in-out infinite;
+  animation-delay: -0.45s;
+}
+.mode-about .char-chao .blush {
+  opacity: 0.85;
+}
+.mode-about .char-chao .char-inner {
+  transform: translateY(-4px);
+}
+.mode-research .pulse,
+.mode-jobs .pulse {
+  animation-duration: 1.1s;
+}
+@keyframes hop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-16px);
+  }
+}
+@keyframes wave-l {
+  0%,
+  100% {
+    transform: rotate(95deg);
+  }
+  50% {
+    transform: rotate(130deg);
+  }
+}
+@keyframes wave-r {
+  0%,
+  100% {
+    transform: rotate(-95deg);
+  }
+  50% {
+    transform: rotate(-130deg);
+  }
+}
+
+/* easter egg: click the human 5× quickly */
+.party .crew-body {
+  animation: hop 0.45s var(--ease) infinite;
+}
+.party .head-float {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: party-spin 0.9s var(--ease) infinite;
+}
+.party .arm-free-l {
+  animation: wave-l 0.4s ease-in-out infinite;
+}
+.party .arm-free-r {
+  animation: wave-r 0.4s ease-in-out infinite;
+}
+@keyframes party-spin {
+  0%,
+  100% {
+    transform: rotate(-12deg);
+  }
+  50% {
+    transform: rotate(12deg);
+  }
+}
+
+/* ───── floating prop ───── */
+.crew-prop {
+  position: absolute;
+  left: 50%;
+  top: -12%;
+  margin-left: -42px;
+  pointer-events: none;
+  animation: float 3s ease-in-out infinite;
+}
+.crew-prop svg {
+  overflow: visible;
+}
+.prop-research {
+  color: var(--human-glow);
+}
+.prop-jobs {
+  color: var(--ai1);
+}
+.prop-contests {
+  color: #ffd76a;
+}
+.prop-contact {
+  color: var(--pink);
+}
+.crew-prop svg {
+  stroke: currentColor;
+  filter: drop-shadow(0 0 10px currentColor);
+}
+.crew-prop .rays,
+.crew-prop .trail {
+  opacity: 0.6;
+  animation: rays 1.4s ease-in-out infinite;
+}
+.crew-prop .star {
+  fill: currentColor;
+}
+@keyframes float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -8px;
+  }
+}
+@keyframes rays {
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ───── speech bubble ───── */
+.bubble {
+  position: absolute;
+  z-index: 3;
+  translate: -50% -100%;
+  padding: 8px 13px;
+  border-radius: 14px;
+  background: #fff;
+  color: #0a0a12;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 8px 26px -6px rgba(0, 0, 0, 0.7), 0 0 24px -4px var(--bc, rgba(255, 255, 255, 0.4));
+}
+.bubble::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  background: #fff;
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+.bubble-alice {
+  --bc: var(--ai1);
+}
+.bubble-chao {
+  --bc: var(--human);
+}
+.bubble-bob {
+  --bc: var(--ai2);
+}
+
+/* ───── the sign ───── */
+.crew-sign {
+  position: relative;
+  width: 81%;
+  margin-top: -2px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border-radius: 6px 6px 16px 16px;
+  background: linear-gradient(180deg, rgba(30, 24, 52, 0.85), rgba(12, 10, 22, 0.85));
+  box-shadow: 0 20px 60px -20px rgba(182, 156, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s;
+}
+.crew-sign:hover {
+  transform: translateY(2px);
+  box-shadow: 0 20px 60px -14px rgba(255, 194, 122, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+.sign-slot {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 8ch;
+  height: 100%;
+  overflow: hidden;
+}
+.sign-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(26px, 3.4vw, 36px);
+  letter-spacing: 0.01em;
+  background: var(--hai-soft);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  min-width: 6ch;
+  text-align: center;
+  white-space: nowrap;
+}
+.sign-spark {
+  color: var(--human-glow);
+  font-size: 18px;
+  animation: sparkle-text 2s ease-in-out infinite;
+}
+.sign-spark:last-child {
+  color: var(--ai1);
+  animation-delay: -1s;
+}
+@keyframes sparkle-text {
+  50% {
+    opacity: 0.3;
+    transform: scale(0.8) rotate(30deg);
+  }
+}
+
+@media (max-width: 560px) {
+  .bubble {
+    font-size: 11.5px;
+    padding: 6px 10px;
+  }
+  .crew-sign {
+    height: 52px;
+  }
+  .crew-prop {
+    scale: 0.75;
+  }
+}

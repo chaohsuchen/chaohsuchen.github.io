@@ -1,0 +1,366 @@
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+/* ───── postcard ───── */
+.postcard-wrap {
+  border-radius: 10px;
+}
+.postcard {
+  --ink: #23203a;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 1px 0.9fr;
+  gap: 0 24px;
+  min-height: 380px;
+  padding: 28px;
+  border-radius: 10px;
+  overflow: hidden;
+  color: var(--ink);
+  background:
+    radial-gradient(120% 80% at 0% 0%, rgba(255, 194, 122, 0.22), transparent 60%),
+    radial-gradient(100% 80% at 100% 100%, rgba(124, 243, 255, 0.18), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.012) 0 2px, transparent 2px 4px),
+    #f5f0e6;
+  box-shadow: 0 40px 100px -40px rgba(255, 194, 122, 0.45), 0 2px 0 rgba(255, 255, 255, 0.6) inset;
+}
+.postcard::before {
+  content: '';
+  grid-column: 2;
+  grid-row: 1;
+  background: rgba(35, 32, 58, 0.18);
+}
+.postcard .holo {
+  mix-blend-mode: soft-light;
+}
+.pc-left {
+  grid-column: 1;
+  grid-row: 1;
+}
+.pc-greet {
+  margin: 0 0 18px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(28px, 3.2vw, 38px);
+  line-height: 1;
+  background: linear-gradient(90deg, #e08a2c, #d34fa8, #6f55d8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.pc-note p {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.45;
+}
+.pc-sign {
+  margin-top: 18px !important;
+  font-size: 22px !important;
+}
+
+.pc-right {
+  grid-column: 3;
+  grid-row: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.pc-stamp {
+  align-self: flex-end;
+  width: 92px;
+  /* perforated edge: a tiled hole pattern that only shows around the inner artwork */
+  background: radial-gradient(circle at 4.5px 4.5px, transparent 2.6px, #fff 3px) -4.5px -4.5px / 9px 9px;
+  padding: 6px;
+  transform: rotate(3deg);
+}
+.pc-stamp-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 4px 6px;
+  background: linear-gradient(160deg, #1b1733, #0b0b16);
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.14em;
+  color: #fff;
+}
+.pc-stamp-faces {
+  display: flex;
+  align-items: flex-end;
+  gap: 1px;
+}
+.pc-postmark {
+  position: absolute;
+  top: 26px;
+  right: 58px;
+  width: 92px;
+  height: 92px;
+  fill: none;
+  stroke: rgba(35, 32, 58, 0.45);
+  stroke-width: 1.4;
+  transform: rotate(-14deg);
+  pointer-events: none;
+}
+.pc-postmark text {
+  fill: rgba(35, 32, 58, 0.55);
+  stroke: none;
+  font-family: var(--mono);
+  font-size: 8.5px;
+  letter-spacing: 1.6px;
+}
+.pc-postmark .pm-year {
+  font-size: 13px;
+  font-weight: 600;
+}
+.pc-lines {
+  list-style: none;
+  margin: auto 0 0;
+  padding: 0;
+}
+.pc-lines li {
+  border-bottom: 1px solid rgba(35, 32, 58, 0.22);
+  padding: 10px 0 6px;
+  font-size: 13.5px;
+}
+.pc-lines a,
+.pc-lines button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  color: var(--ink);
+  text-align: left;
+  transition: color 0.2s;
+}
+.pc-lines a:hover,
+.pc-lines button:hover {
+  color: #b2479a;
+}
+.pc-mail {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+.pc-lines small {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+.pc-where {
+  font-family: var(--mono);
+  font-size: 11px !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+/* ───── agent chat ───── */
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: min(580px, 74vh);
+  overflow: hidden;
+}
+.chat-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line);
+}
+.chat-avatars {
+  display: flex;
+}
+.chat-avatars .face + .face {
+  margin-left: -6px;
+}
+.chat-title {
+  font-weight: 600;
+}
+.chat-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.chat-status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6dffa8;
+  box-shadow: 0 0 8px #6dffa8;
+}
+.chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+.msg {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  max-width: 88%;
+}
+.msg-you {
+  align-self: flex-end;
+}
+.msg-face {
+  flex: none;
+}
+.msg-bubble {
+  padding: 10px 14px;
+  border-radius: 16px;
+  line-height: 1.5;
+  font-size: 14.5px;
+}
+.msg-alice .msg-bubble {
+  background: rgba(124, 243, 255, 0.1);
+  border: 1px solid rgba(124, 243, 255, 0.25);
+  border-bottom-left-radius: 4px;
+}
+.msg-bob .msg-bubble {
+  background: rgba(182, 156, 255, 0.1);
+  border: 1px solid rgba(182, 156, 255, 0.28);
+  border-bottom-left-radius: 4px;
+}
+.msg-you .msg-bubble {
+  background: var(--human);
+  color: #1a1206;
+  font-weight: 500;
+  border-bottom-right-radius: 4px;
+}
+.typing {
+  display: flex;
+  gap: 4px;
+  padding: 14px 16px;
+}
+.typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.4;
+  animation: dots 1s ease-in-out infinite;
+}
+.typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes dots {
+  40% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+.caret {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  margin-left: 2px;
+  vertical-align: -2px;
+  background: currentColor;
+  animation: live 0.8s steps(2) infinite;
+}
+.chat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 14px 16px 18px;
+  border-top: 1px solid var(--line);
+}
+.chat-chip {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 13px;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.chat-chip:hover:not(:disabled) {
+  background: rgba(255, 194, 122, 0.12);
+  border-color: var(--human);
+  transform: translateY(-1px);
+}
+.chat-chip:disabled {
+  opacity: 0.4;
+  cursor: wait;
+}
+.chat-chip.done {
+  border-color: var(--human);
+  color: var(--human);
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .chat {
+    height: 560px;
+  }
+}
+
+@media (max-width: 560px) {
+  .postcard {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 22px;
+  }
+  .postcard::before {
+    display: none;
+  }
+  .pc-right {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 260px;
+  }
+  .pc-postmark {
+    top: 18px;
+    right: 70px;
+  }
+}
+
+.msg-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+.msg-links a {
+  display: inline-flex;
+  align-self: flex-start;
+  max-width: 100%;
+  padding: 7px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--line-2);
+  font-family: var(--mono);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  transition: background 0.2s, border-color 0.2s;
+}
+.msg-links a:hover {
+  background: rgba(255, 194, 122, 0.14);
+  border-color: var(--human);
+}

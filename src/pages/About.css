@@ -1,0 +1,335 @@
+.muted {
+  color: var(--muted);
+  line-height: 1.6;
+}
+.center-head {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+  margin-bottom: 140px;
+}
+.about-bio p {
+  color: #c9c7dc;
+  font-size: 18px;
+  line-height: 1.75;
+  margin: 0 0 22px;
+}
+.about-bio p.lead {
+  color: var(--text);
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+}
+
+.crew-id {
+  position: relative;
+  padding: 24px;
+  overflow: hidden;
+  text-align: center;
+}
+.crew-id-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--human);
+  color: #1a1206;
+  font-weight: 600;
+}
+.crew-id-face {
+  display: grid;
+  place-items: center;
+  margin: 22px auto 10px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 194, 122, 0.14), transparent 70%);
+}
+.crew-id h3 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: -0.03em;
+}
+.crew-id-prog {
+  margin: 4px 0 18px;
+  color: var(--human);
+  font-size: 20px;
+}
+.facts {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: left;
+}
+.facts div {
+  background: rgba(10, 10, 20, 0.9);
+  padding: 10px 12px;
+}
+.facts dt {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.facts dd {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+.crew-id-team {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+.team-faces {
+  display: flex;
+  gap: 6px;
+}
+.barcode {
+  margin-top: 16px;
+  height: 26px;
+  opacity: 0.35;
+  background: repeating-linear-gradient(90deg, #fff 0 2px, transparent 2px 4px, #fff 4px 5px, transparent 5px 9px, #fff 9px 12px, transparent 12px 14px);
+  border-radius: 3px;
+}
+
+.principles {
+  margin-bottom: 140px;
+}
+.principle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.principle {
+  height: 100%;
+  padding: 28px;
+  transition: border-color 0.3s, transform 0.4s var(--ease);
+}
+.principle:hover {
+  border-color: var(--pc);
+  transform: translateY(-6px);
+}
+.principle-face {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.principle-num {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--pc);
+}
+.principle h3 {
+  font-size: 32px;
+  margin: 22px 0 10px;
+  line-height: 1.05;
+  color: var(--pc);
+}
+.principle p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.toolkit {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+  margin-bottom: 40px;
+}
+.edu {
+  margin-top: 36px;
+  display: grid;
+  gap: 14px;
+}
+.edu-item {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.edu-when {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--human);
+  padding-top: 3px;
+}
+.edu-what {
+  font-weight: 600;
+  line-height: 1.35;
+}
+.edu-where {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* ───── orbit system ───── */
+.orbit-sys {
+  position: relative;
+  width: min(100%, 540px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  container-type: inline-size;
+}
+.orbit-core {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+.orbit-core::before {
+  content: '';
+  position: absolute;
+  width: 26%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 194, 122, 0.3), transparent 70%);
+  animation: live 3s ease-in-out infinite;
+}
+.ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--r) * 2%);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.14);
+  animation: spin var(--dur) linear infinite;
+  --rpx: calc(var(--r) * 1cqw);
+}
+.ring-outer {
+  animation-direction: reverse;
+}
+.planet {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+}
+.planet-label {
+  position: absolute;
+  translate: -50% -50%;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  background: rgba(12, 12, 22, 0.9);
+  border: 1px solid var(--line-2);
+  animation: spin var(--dur) linear infinite reverse;
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+.ring-outer .planet-label {
+  animation-direction: normal;
+}
+.ring-inner .planet-label {
+  color: var(--ai1);
+  border-color: rgba(124, 243, 255, 0.35);
+}
+.ring-outer .planet-label {
+  color: var(--ai2);
+  border-color: rgba(182, 156, 255, 0.35);
+}
+.planet-label:hover {
+  background: #fff;
+  color: #07070d;
+}
+.orbit-sys:hover .ring,
+.orbit-sys:hover .planet-label {
+  animation-play-state: paused;
+}
+
+@media (max-width: 900px) {
+  .about-grid,
+  .toolkit {
+    grid-template-columns: 1fr;
+  }
+  .about-grid {
+    margin-bottom: 100px;
+  }
+  .principle-grid {
+    grid-template-columns: 1fr;
+  }
+  .principles {
+    margin-bottom: 100px;
+  }
+}
+@media (max-width: 520px) {
+  .orbit-sys {
+    width: 76%;
+  }
+  .planet-label {
+    font-size: 9.5px;
+    padding: 5px 8px;
+  }
+  .edu-item {
+    grid-template-columns: 48px 1fr;
+    gap: 12px;
+  }
+  .edu-item .edu-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+  }
+}
+.edu-note {
+  color: var(--dim);
+  font-size: 13px;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+.crew-id-nick {
+  margin: 2px 0 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.edu-logo {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: #fff;
+  padding: 6px;
+  box-shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+.edu-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.edu-item .edu-when {
+  display: block;
+  padding: 0;
+  margin-bottom: 3px;
+}

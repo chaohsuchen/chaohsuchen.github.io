@@ -1,0 +1,61 @@
+.site-footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(to bottom, rgba(4, 4, 10, 0), rgba(4, 4, 10, 0.8));
+}
+.footer-row {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 28px var(--gutter) 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-mark {
+  font-size: 26px;
+}
+.footer-mark .x {
+  color: var(--dim);
+  font-size: 18px;
+}
+.footer-links {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: #fff;
+}
+.marquee {
+  overflow: hidden;
+  padding: 14px 0 22px;
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 60s linear infinite;
+}
+.marquee-track span {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  color: var(--dim);
+  white-space: pre;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}

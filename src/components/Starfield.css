@@ -1,0 +1,26 @@
+.universe {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: var(--bg);
+}
+.universe canvas {
+  position: absolute;
+  inset: 0;
+}
+.nebula {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(40% 32% at 78% 62%, rgba(124, 243, 255, 0.06), transparent 70%),
+    radial-gradient(36% 30% at 22% 30%, rgba(255, 194, 122, 0.05), transparent 70%),
+    radial-gradient(50% 40% at 55% 20%, rgba(182, 156, 255, 0.055), transparent 70%);
+  animation: nebula-drift 40s ease-in-out infinite alternate;
+}
+@keyframes nebula-drift {
+  to {
+    transform: translate3d(-4%, 3%, 0) rotate(6deg);
+  }
+}

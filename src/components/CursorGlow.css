@@ -1,0 +1,26 @@
+.cursor-halo,
+.cursor-core {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.4s;
+  will-change: transform;
+}
+.cursor-halo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 228, 138, 0.26) 0%, rgba(255, 194, 122, 0.12) 35%, rgba(255, 143, 216, 0.04) 60%, transparent 72%);
+  mix-blend-mode: screen;
+}
+.cursor-core {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 238, 160, 0.55), rgba(255, 228, 138, 0.18) 50%, transparent 72%);
+  mix-blend-mode: screen;
+  transition: opacity 0.4s, scale 0.3s;
+}

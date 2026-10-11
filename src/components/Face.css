@@ -1,0 +1,73 @@
+.face {
+  overflow: visible;
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.face-chao {
+  stroke: var(--human);
+  --fill: #1c140b;
+  filter: drop-shadow(0 0 6px rgba(255, 194, 122, 0.55));
+}
+.face-alice {
+  stroke: var(--ai1);
+  --fill: #08161c;
+  filter: drop-shadow(0 0 6px rgba(124, 243, 255, 0.55));
+}
+.face-bob {
+  stroke: var(--ai2);
+  --fill: #120f22;
+  filter: drop-shadow(0 0 6px rgba(182, 156, 255, 0.55));
+}
+.face .fill {
+  fill: var(--fill);
+}
+.face .eye {
+  fill: #f6f4ff;
+  stroke-width: 2;
+}
+.face .pupil {
+  fill: #07070d;
+  stroke: none;
+}
+.face .hair {
+  fill: var(--human);
+  fill-opacity: 0.85;
+}
+.face .blush {
+  fill: var(--pink);
+  stroke: none;
+  opacity: 0.4;
+}
+.face .accent {
+  fill: var(--ai1);
+}
+.face .eyes {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: blink 5s infinite;
+}
+.face-chao .eyes {
+  animation-delay: 1.3s;
+}
+.face-bob .eyes {
+  animation-delay: 2.6s;
+}
+.face .visor {
+  fill: #03060c;
+  stroke-width: 2;
+  stroke-opacity: 0.6;
+}
+.face .led {
+  stroke: none;
+}
+.face-alice .led {
+  fill: var(--ai1);
+}
+.face-bob .led {
+  fill: var(--ai2);
+}
+.face .eye-ring {
+  stroke-width: 2.2;
+  stroke-opacity: 0.7;
+}
